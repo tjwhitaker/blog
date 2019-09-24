@@ -6,4 +6,5 @@ options = Dict(
   "source_dir" => "src",
 )
 
-Stasis.build(options)
+# Stasis.build(options)
+Stasis.build_page("src/pages/index.jl", title="Hello world")
