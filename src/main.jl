@@ -1,10 +1,5 @@
 include("../Stasis.jl/src/Stasis.jl")
 using .Stasis
 
-options = Dict(
-  "build_dir" => "build",
-  "source_dir" => "src",
-)
-
-# Stasis.build(options)
-Stasis.build_page("src/pages/index.jl", title="Hello world")
+title = "Odd Prophet"
+Stasis.build("src/pages/index.jl", "build/index.html", title)
