@@ -8,3 +8,5 @@ for (root, dirs, files) in walkdir("src/static")
     Stasis.copy(joinpath(root, file), joinpath("build", file))
   end
 end
+
+Stasis.serve("build")
