@@ -11,6 +11,13 @@ html(lang="en") do
   body() do
     main() do
       h1("Hello World")
+      form() do
+        input(type="email", data_netlify="true")
+      end
+
+      for post in context["posts"]
+        p(post)
+      end
     end
   end
 end
