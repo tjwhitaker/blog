@@ -15,7 +15,7 @@ html(lang="en") do
         input(type="email", data_netlify="true")
       end
 
-      for post in context["posts"]
+      for post in context[:posts]
         p(post)
       end
     end
