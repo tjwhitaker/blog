@@ -19,11 +19,6 @@ feed = [
 ]
 
 Stasis.build("src/pages/index.jl", "build/index.html", posts=feed)
-
-for (root, dirs, files) in walkdir("src/static")
-  for file in files
-    Stasis.copy(joinpath(root, file), joinpath("build", file))
-  end
-end
+Stasis.copy("src/static", "build/static")
 
 Stasis.serve("build")
