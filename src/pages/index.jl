@@ -4,9 +4,9 @@ html(lang="en") do
     meta(name="viewport", content="width=device-width, initial-scale=1")
     title("Odd Prophet")
 
-    link(rel="stylesheet", href="/static/reset.css")
-    link(rel="stylesheet", href="/static/theme.css")
-    link(rel="stylesheet", href="/static/index.css")
+    link(rel="stylesheet", href="/static/styles/reset.css")
+    link(rel="stylesheet", href="/static/styles/theme.css")
+    link(rel="stylesheet", href="/static/styles/index.css")
     link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Fira+Mono:400,500,700&amp;display=swap")
   end
 
@@ -40,7 +40,7 @@ html(lang="en") do
               Thanks to increased computing power, machine learning models are helping us glean insights from the vast, complex datasets that describe our universe. From galaxies billions of light years away to particles billions of times smaller than an atom, science experiments are producing more data than ever before. These algorithms are the most powerful way to learn from these experiments and I believe they are the key to unlocking a new data-driven paradigm in science.
             """)
 
-            img(src="/static/inception.png")
+            img(src="/static/images/inception.png")
 
             p() do
               i("Inception: A deep learning architecture developed by the AI research team at Google.")
