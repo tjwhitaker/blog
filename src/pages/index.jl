@@ -7,20 +7,23 @@ html(lang="en") do
     link(rel="stylesheet", href="/reset.css")
     link(rel="stylesheet", href="/theme.css")
     link(rel="stylesheet", href="/index.css")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Fira+Mono:400,500,700&amp;display=swap")
   end
 
   body() do
     header() do
       div(class="wrapper") do
-        div(class="logo") do
-          h1("Odd Prophet")
-        end
-        
-        nav() do
-          a("About", href="/about")
-          a("Blog", href="/blog")
-          a("Contact", href="/contact")
-          a("Home", href="/")
+        div(class="masthead") do
+          div(class="logo") do
+            h1("Odd Prophet")
+          end
+          
+          nav() do
+            a("About", href="/about")
+            a("Blog", href="/blog")
+            a("Contact", href="/contact")
+            a("Home", href="/")
+          end
         end
       end
     end

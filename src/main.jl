@@ -1,7 +1,7 @@
 include("../Stasis.jl/src/Stasis.jl")
 using .Stasis
 
-posts = [
+feed = [
   Dict(
     :title => "The Higgs Boson Challenge",
     :slug => "the-higgs-boson-challenge",
@@ -18,7 +18,7 @@ posts = [
   )
 ]
 
-Stasis.build("src/pages/index.jl", "build/index.html", posts=posts)
+Stasis.build("src/pages/index.jl", "build/index.html", posts=feed)
 
 for (root, dirs, files) in walkdir("src/static")
   for file in files
