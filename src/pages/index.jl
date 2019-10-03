@@ -4,8 +4,9 @@ html(lang="en") do
     meta(name="viewport", content="width=device-width, initial-scale=1")
     title("Odd Prophet")
 
-    link(rel="stylesheet", href="/normalize.css")
-    link(rel="stylesheet", href="/main.css")
+    link(rel="stylesheet", href="/reset.css")
+    link(rel="stylesheet", href="/theme.css")
+    link(rel="stylesheet", href="/index.css")
   end
 
   body() do
@@ -16,6 +17,9 @@ html(lang="en") do
         end
         
         nav() do
+          a("About", href="/about")
+          a("Blog", href="/blog")
+          a("Contact", href="/contact")
           a("Home", href="/")
         end
       end
@@ -34,14 +38,34 @@ html(lang="en") do
             """)
 
             img(src="/inception.png")
+
+            p() do
+              i("Inception: A deep learning architecture developed by the AI research team at Google.")
+            end
+            
+            p("""
+              I'm interested in a variety of applications of machine learning. I'm especially interested in projects that are looking to make an impact on social good, address the grand challenges that face humanity, or are looking to push the state of the art in science.
+            """)
+
+            ul() do
+              li("Climate Change and Anthropogenic Impacts on the Environment")
+              li("Water Scarcity and Pollution")
+              li("Poverty, Disease, and Malnutrition")
+              li("Overpopulation and Global Education")
+              li("Disaster Resilience and Regional Stability")
+              li("Wildlife Conservation and Biodiversity Loss")
+              li("Renewable Energy and Sustainable Development")
+            end
           end
 
           aside() do
             for post in context[:posts]
               div() do
-                h3(post[:title])
-                p(post[:excerpt])
-                small(post[:category] * " from " * post[:date])
+                a(href="/blog/$(post[:slug])") do
+                  h3(post[:title])
+                  p(post[:excerpt])
+                  small(post[:category] * " from " * post[:date])
+                end
               end
             end
           end
