@@ -1,5 +1,23 @@
-html,
-body {
-  background: #121212;
-  color: #ffffff;
+.post {
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.post a p {
+  color: #d4d4d4;
+  font-weight: normal;
+}
+
+.post a small {
+  font-weight: normal;
+  display: block;
+  color: #949494;
+}
+
+.post a > * + * {
+  margin-top: 0.5em;
+}
+
+.post a:hover > h3 {
+  color: rgb(255, 64, 129);
 }

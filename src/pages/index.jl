@@ -2,12 +2,12 @@ html(lang="en") do
   head() do
     meta(charset="utf-8")
     meta(name="viewport", content="width=device-width, initial-scale=1")
-    title("Odd Prophet")
+    title("Home | Odd Prophet")
 
     link(rel="stylesheet", href="/static/styles/reset.css")
     link(rel="stylesheet", href="/static/styles/theme.css")
     link(rel="stylesheet", href="/static/styles/index.css")
-    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Fira+Mono:400,500,700&amp;display=swap")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Fira+Mono:400,500,700|Fira+Sans:400,500,700&display=swap")
   end
 
   body() do
@@ -28,10 +28,10 @@ html(lang="en") do
       end
     end
 
-    div(class="container") do
+    main() do
       div(class="wrapper") do
         div(class="grid") do
-          main() do
+          article() do
             p("""
               Welcome to Odd Prophet! This is a website to explore cool datasets and machine learning algorithms.
             """)
@@ -62,8 +62,9 @@ html(lang="en") do
           end
 
           aside() do
+            h5("Feed", class="minion")
             for post in context[:posts]
-              div() do
+              div(class="post") do
                 a(href="/blog/$(post[:slug])") do
                   h3(post[:title])
                   p(post[:excerpt])
@@ -74,6 +75,9 @@ html(lang="en") do
           end
         end
       end
+    end
+    footer() do
+      div(class="wrapper")
     end
   end
 end

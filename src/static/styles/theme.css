@@ -1,11 +1,40 @@
 html,
 body {
   background: #121212;
-  color: #ffffff;
+  color: #d4d4d4;
+  font-family: Fira Mono, monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: white;
+  font-family: Fira Sans, sans-sefif;
+}
+
+a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(255, 64, 129);
+}
+
+.minion {
+  color: #949494;
+  text-transform: uppercase;
+  padding: 1em 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  font-family: Fira Mono, monospace;
 }
 
 header {
-  margin-top:1rem;
+  margin-top: 1rem;
 }
 
 .masthead {
@@ -13,19 +42,21 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.267);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   padding-bottom: 1rem;
 }
 
 .logo {
-  
 }
 
 nav {
   display: flex;
-  align-items:center;
+  align-items: center;
 }
 
+nav a {
+  margin-left: 1rem;
+}
 
 .wrapper {
   max-width: 75rem;
@@ -33,4 +64,29 @@ nav {
   padding: 1rem;
   position: relative;
   height: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0px, 2fr) minmax(0px, 1fr);
+}
+
+.grid article {
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  padding-right: 1rem;
+}
+.grid aside {
+  padding-left: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  .grid article {
+    border-right: 0;
+    padding-right: 0;
+    grid-column: 1 / span 2;
+  }
+
+  .grid aside {
+    display: none;
+  }
 }
