@@ -19,6 +19,7 @@ feed = [
 ]
 
 Stasis.build("src/pages/index.jl", "build/index.html", posts=feed)
+Stasis.build("src/pages/404.jl", "build/404.html")
 Stasis.copy("src/static", "build/static")
 
 Stasis.serve("build")
