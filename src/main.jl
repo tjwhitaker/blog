@@ -19,20 +19,27 @@ feed = [
 ]
 
 # # Collection of post metadata for index
-# feed = []
+feed = []
 
-# # Parse markdown and build articles
-# for file in walkdir()
-#   meta, content = Stasis.parse(file)
-  
-#   push!(feed, meta)
+# Parse markdown and build articles
+# for (root, dir, files) in walkdir("src/content")
+#   for file in files
+#     if occursin(r"\.md$", file)
+#       meta, content = Stasis.parse(joinpath(root, file))
+#       push!(feed, meta)
 
-#   Stasis.build(
-#     "src/templates/article.jl",
-#     "build/$(meta[:slug])/index.html",
-#     meta=meta,
-#     content=content
-#   )
+#       Stasis.build(
+#         "src/templates/article.jl",
+#         "build/articles/$(meta[:slug])/index.html",
+#         meta=meta,
+#         content=content
+#       )
+#     else
+#       Stasis.copy(joinpath(root, file), "build/static/$(file)")
+#     end
+#   end
+
+#   println((root, dir, files))
 # end
 
 # Build static pages
