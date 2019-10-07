@@ -18,8 +18,29 @@ feed = [
   )
 ]
 
+# # Collection of post metadata for index
+# feed = []
+
+# # Parse markdown and build articles
+# for file in walkdir()
+#   meta, content = Stasis.parse(file)
+  
+#   push!(feed, meta)
+
+#   Stasis.build(
+#     "src/templates/article.jl",
+#     "build/$(meta[:slug])/index.html",
+#     meta=meta,
+#     content=content
+#   )
+# end
+
+# Build static pages
 Stasis.build("src/pages/index.jl", "build/index.html", posts=feed)
 Stasis.build("src/pages/404.jl", "build/404.html")
+
+# Copy static files
 Stasis.copy("src/static", "build/static")
 
+# Start dev server
 Stasis.serve("build")
