@@ -5,22 +5,13 @@ using .Stasis
 feed = []
 
 # Parse markdown and build articles
-for (root, dir, files) in walkdir("src/content")
-  for file in files
-    if occursin(r"\.md$", file)
-      meta, content = Stasis.parse(joinpath(root, file))
-      push!(feed, meta)
+for file in Stasis.walk("src/content")
+  meta = Stasis.parse_toml(file)
+  content = Stasis.parse_markdown(file)
 
-      Stasis.build(
-        "src/templates/article.jl",
-        "build/articles/$(meta["slug"])/index.html",
-        meta=meta,
-        content=content
-      )
-    else
-      Stasis.copy(joinpath(root, file), "build/static/$(file)")
-    end
-  end
+  push!(feed, meta)
+
+  Stasis.build("src/templates/article.jl", "build/articles/$(meta["slug"])/index.html", meta=meta, content=content)
 end
 
 # Build static pages

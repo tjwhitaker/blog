@@ -65,7 +65,7 @@ html(lang="en") do
             h5("Feed", class="minion")
             for post in context["posts"]
               div(class="post") do
-                a(href="/blog/$(post["slug"])") do
+                a(href="/articles/$(post["slug"])") do
                   h3(post["title"])
                   p(post["excerpt"])
                   small(post["category"] * " from " * post["date"])
