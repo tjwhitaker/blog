@@ -11,11 +11,17 @@ for file in Stasis.walk("src/content")
 
   push!(feed, meta)
 
-  Stasis.build("src/templates/article.jl", "build/articles/$(meta["slug"])/index.html", meta=meta, content=content)
+  Stasis.build(
+    "src/templates/article.jl",
+    "build/articles/$(meta["slug"])/index.html", 
+    meta=meta, 
+    content=content
+  )
 end
 
 # Build static pages
 Stasis.build("src/templates/index.jl", "build/index.html", posts=feed)
+Stasis.build("src/templates/articles.jl", "build/articles/index.html", posts=feed)
 Stasis.build("src/templates/404.jl", "build/404.html")
 
 # Copy static files
