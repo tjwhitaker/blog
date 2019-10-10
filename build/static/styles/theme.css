@@ -37,6 +37,12 @@ header {
   margin-top: 1rem;
 }
 
+header .title {
+  color:white;
+  font-family: Fira Sans, sans-serif;
+  font-size:2em;
+}
+
 .masthead {
   position: relative;
   display: flex;

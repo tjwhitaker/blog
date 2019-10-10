@@ -14,7 +14,7 @@ html(lang="en") do
       div(class="wrapper") do
         div(class="masthead") do
           div(class="logo") do
-            h1("Odd Prophet")
+            a("Odd Prophet", class="title", href="/")
           end
           
           nav() do

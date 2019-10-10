@@ -15,7 +15,7 @@ html(lang="en") do
       div(class="wrapper") do
         div(class="masthead") do
           div(class="logo") do
-            h1("Odd Prophet")
+            a("Odd Prophet", class="title", href="/")
           end
           
           nav() do
@@ -32,6 +32,11 @@ html(lang="en") do
       div(class="wrapper") do
         div(class="grid") do
           article() do
+            for post in context["posts"]
+              div() do
+                h2(post["title"])
+              end
+            end
           end
 
           aside() do
