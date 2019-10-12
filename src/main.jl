@@ -22,6 +22,8 @@ end
 # Build static pages
 Stasis.build(template="src/templates/index.jl", output="build/index.html", posts=feed)
 Stasis.build(template="src/templates/blog.jl", output="build/blog/index.html", posts=feed)
+Stasis.build(template="src/templates/about.jl", output="build/about/index.html")
+Stasis.build(template="src/templates/contact.jl", output="build/contact/index.html")
 Stasis.build(template="src/templates/404.jl", output="build/404.html")
 
 # Copy static files
