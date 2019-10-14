@@ -64,6 +64,15 @@ nav a {
   margin-left: 1rem;
 }
 
+pre {
+  background: black;
+  padding:1em;
+}
+
+pre code {
+  font-size: .8rem;
+}
+
 .wrapper {
   max-width: 75rem;
   margin: 0 auto;
