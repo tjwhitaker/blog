@@ -45,6 +45,11 @@ ol {
   list-style: inside;
 }
 
+ul p, 
+ol p {
+  display:inline;
+}
+
 /* Make images easier to work with */
 img {
   max-width: 100%;
