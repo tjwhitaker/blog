@@ -35,6 +35,9 @@ html(lang="en") do
           end
 
           aside() do
+            h5("Photos", class="minion")
+            img(src="/static/images/worm-turns.jpg")
+            img(src="/static/images/office.jpg")
           end
         end
       end
