@@ -6,7 +6,7 @@ html(lang="en") do
 
     link(rel="stylesheet", href="/static/styles/reset.css")
     link(rel="stylesheet", href="/static/styles/theme.css")
-    link(rel="stylesheet", href="/static/styles/index.css")
+    link(rel="stylesheet", href="/static/styles/blog.css")
     link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Fira+Mono:400,500,700|Fira+Sans:400,500,700&display=swap")
   end
 
@@ -33,8 +33,11 @@ html(lang="en") do
         div(class="grid") do
           article() do
             for post in context["posts"]
-              div() do
-                h2(post["title"])
+              div(class="post") do
+                a(href="/blog/$(post["slug"])") do
+                  h3(post["title"])
+                  p(post["excerpt"])
+                end
               end
             end
           end
