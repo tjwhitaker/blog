@@ -33,7 +33,11 @@ html(lang="en") do
         div(class="grid") do
           article() do
             p("""
-              My name is Tim Whitaker. I'm a graduate researcher at CSU studying the applications of evolutionary training algorithms to neural networks. My research focuses on recurrent neural networks and chaotic systems.
+              My name is Tim Whitaker. I'm a graduate researcher at CSU studying applications of evolutionary training algorithms to neural networks. I built this website to serve as a platform to teach and learn about cutting edge machine learning research.
+            """)
+
+            p("""
+              
             """)
           end
 
