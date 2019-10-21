@@ -39,7 +39,7 @@ html(lang="en") do
           end
 
           aside() do
-            
+            h5("Meta", class="minion")
           end
         end
       end

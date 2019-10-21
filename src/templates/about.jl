@@ -33,17 +33,20 @@ html(lang="en") do
         div(class="grid") do
           article() do
             p("""
-              My name is Tim Whitaker. I'm a graduate researcher at CSU studying applications of evolutionary training algorithms to neural networks. I built this website to serve as a platform to teach and learn about cutting edge machine learning research.
+              My name is Tim Whitaker. I'm a graduate researcher at Colorado State University studying applications of evolutionary training algorithms to neural networks. I built this website to serve as a platform to teach and learn about cutting edge machine learning research.
             """)
 
             p("""
-              
+              I'm building models, collecting datasets, and writing articles about machine learning and its applications.
+            """)
+
+            p("""
+              I want to build Odd Prophet into the number one resource for machine learning research. I want to work on problems with impact and I want to make the world a better place. I think there's a lot of potential for machine learning models to do a lot of good and I want to turn this company into a force for that.
             """)
           end
 
           aside() do
             h5("Photos", class="minion")
-            img(src="/static/images/worm-turns.jpg")
             img(src="/static/images/office.jpg")
           end
         end
