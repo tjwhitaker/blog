@@ -1,3 +1,6 @@
-aside img {
-  margin:1rem 0;
+.puzzle {
+  word-wrap: anywhere;
+  word-break: break-all;
+  font-size: 0.8rem;
+  margin-top: 1rem;
 }
