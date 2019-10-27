@@ -24,3 +24,7 @@
 .post:first-child {
   padding-top: 0;
 }
+
+aside p {
+  margin-bottom:2rem;
+}
