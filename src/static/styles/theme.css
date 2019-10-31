@@ -23,7 +23,7 @@ a {
 }
 
 a:hover, a:active, a:focus {
-  color: rgb(255, 64, 129);
+  color: #00e676;
 }
 
 .minion {
@@ -45,7 +45,7 @@ header .title {
 }
 
 header .title:hover, header .title:focus, header .title:active {
-  color: rgb(255, 64, 129);
+  color: #00e676;
 }
 
 .masthead {
@@ -73,7 +73,7 @@ nav a svg {
 }
 
 nav a:hover svg {
-  color: rgb(255, 64, 129);
+  color:#00e676;
 }
 
 pre {
