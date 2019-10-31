@@ -35,10 +35,13 @@ html(lang="en") do
 
     main() do
       div(class="wrapper") do
-        div() do
+        div(class="grid") do
           article() do
             raw(context["content"])
           end
+        end
+
+        aside() do
         end
       end
     end

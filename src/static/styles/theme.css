@@ -63,6 +63,7 @@ nav {
 }
 
 nav a {
+  display:inline-block;
   margin-left: 1rem;
 }
 
@@ -85,7 +86,7 @@ pre code {
 }
 
 .wrapper {
-  max-width: 65rem;
+  max-width: 75rem;
   margin: 0 auto;
   padding: 1rem;
   position: relative;
