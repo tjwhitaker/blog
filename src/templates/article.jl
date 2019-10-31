@@ -4,6 +4,7 @@ html(lang="en") do
     meta(name="viewport", content="width=device-width, initial-scale=1")
     title("$(context["meta"]["title"]) | Odd Prophet")
 
+    link(rel="icon", href="/static/favicon.ico")
     link(rel="stylesheet", href="/static/styles/reset.css")
     link(rel="stylesheet", href="/static/styles/theme.css")
     link(rel="stylesheet", href="/static/styles/article.css")
