@@ -13,7 +13,7 @@ for file in Stasis.walk("src/content")
 
   Stasis.build(
     template="src/templates/article.jl",
-    output="build/blog/$(meta["slug"])/index.html",
+    output="build/$(meta["slug"])/index.html",
     meta=meta,
     content=content
   )
