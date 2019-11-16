@@ -43,7 +43,7 @@ html(lang="en") do
             """)
 
             p("""
-              We want to teach and learn about the nuances of trading. We're writing articles, making videos, and building tools that you can learn from and apply to your own practice. We believe in sharing our research and experiments and we hope that we can foster an open and collaborative community by doing so.
+              We want to teach and learn about the nuances of trading. We're writing articles, making videos, and building tools that you can learn from and apply to your own practice. We believe in sharing our research and experiments and we hope that we can foster an open and collaborative community.
             """)
 
             img(src="/static/images/inception.png")
@@ -53,13 +53,8 @@ html(lang="en") do
             end
 
             p("""
-              We want to be the number one resource for cutting edge algorithmic trading.
+              We want to be the number one resource for cutting edge algorithmic and quantitative trading. If you want to get in touch with us, feel free to reach out to info@takeprophet.com.
             """)
-
-            ul() do
-              li()
-            end
-
           end
 
           aside() do
