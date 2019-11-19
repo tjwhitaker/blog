@@ -39,22 +39,31 @@ html(lang="en") do
         div(class="grid") do
           article() do
             p("""
-              Welcome to Take Prophet! This is a website exploring the intersections of programming, machine learning, and investing. We are a group of computer scientists looking to tackle financial markets.
+              Welcome to Take Prophet! This website is exploring the intersections of software engineering, machine learning and quantitative trading.
             """)
 
             p("""
-              We want to teach and learn about the nuances of trading. We're writing articles, making videos, and building tools that you can learn from and apply to your own practice. We believe in sharing our research and experiments and we hope that we can foster an open and collaborative community.
+              We are computer scientists looking to tackle financial markets. We're writing articles, making videos, and building tools that you can learn from and apply to your own practice.
             """)
 
             img(src="/static/images/inception.png")
 
             p() do
-              i("Inception: A breakthrough deep neural network architecture developed by the AI research team at Google")
+              i("NIN: A deep convolutional network architecture.")
+              sup("1")
             end
 
             p("""
-              We want to be the number one resource for cutting edge algorithmic and quantitative trading. If you want to get in touch with us, feel free to reach out to info@takeprophet.com.
+              We want to be the number one resource for algorithmic trading models and tools. We believe in sharing our research and experiments and we hope that we can foster an open and collaborative community.
             """)
+
+            p("""
+              If you want to get in touch with us, feel free to reach out to info@takeprophet.com.
+            """)
+
+            p() do
+              small("[1]: https://arxiv.org/pdf/1312.4400v3.pdf")
+            end
           end
 
           aside() do
