@@ -2,7 +2,7 @@ html(lang="en") do
   head() do
     meta(charset="utf-8")
     meta(name="viewport", content="width=device-width, initial-scale=1")
-    title("Home | Take Prophet")
+    title("Home | Whit's Works")
 
     link(rel="icon", href="/static/favicon.ico")
     link(rel="stylesheet", href="/static/styles/reset.css")
@@ -16,7 +16,7 @@ html(lang="en") do
       div(class="wrapper") do
         div(class="masthead") do
           div(class="logo") do
-            a("Take Prophet", class="title", href="/")
+            a("Whit's Works", class="title", href="/")
           end
           
           nav() do
@@ -39,26 +39,36 @@ html(lang="en") do
         div(class="grid") do
           article() do
             p("""
-              Welcome to Take Prophet! This website is exploring the intersections of software engineering, machine learning and quantitative trading.
+              Welcome! My name is Tim Whitaker and Whit's Works is the umbrella under which I make stuff. I'm a graduate researcher studying computer science at Colorado State University.
             """)
 
             p("""
-              We are computer scientists looking to tackle financial markets. We're writing articles, making videos, and building tools that you can learn from and apply to your own practice.
+              
+            """)
+            
+            p("""
+              Something about core values. 3 of them. Integrity, resilience.
+
+              I believe in *integrity*,  being selfless, disciplined, and tough. I try to put the team first, do what I say I will, and do what's right.
             """)
 
             img(src="/static/images/inception.png")
 
             p() do
-              i("NIN: A deep convolutional network architecture.")
+              i("Network-in-Network: A breakthrough approach to deep convoutional networks")
               sup("1")
             end
 
+            p("""
+
+            """)
+            
             p("""
               We want to be the number one resource for algorithmic trading models and tools. We believe in sharing our research and experiments and we hope that we can foster an open and collaborative community.
             """)
 
             p("""
-              If you want to get in touch with us, feel free to reach out to info@takeprophet.com.
+              If you want to get in touch, please reach out to info@whitsworks.com.
             """)
 
             p() do

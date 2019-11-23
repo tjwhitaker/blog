@@ -42,6 +42,8 @@ header .title {
   color:white;
   font-family: Fira Sans, sans-serif;
   font-size:2em;
+  line-height:1;
+  display:flex;
 }
 
 header .title:hover, header .title:focus, header .title:active {
