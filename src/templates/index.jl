@@ -39,41 +39,28 @@ html(lang="en") do
         div(class="grid") do
           article() do
             p("""
-              Welcome! My name is Tim Whitaker and Whit's Works is the umbrella under which I make stuff. I'm a graduate researcher studying computer science at Colorado State University.
-            """)
-
-            p("""
-              
+              Welcome! I'm Tim Whitaker and Whit's Works is the umbrella under which I make stuff. I've been programming for almost 15 years and I'm currently a graduate researcher at Colorado State University studying evolutionary neural networks.
             """)
             
             p("""
-              Something about core values. 3 of them. Integrity, resilience.
-
-              I believe in *integrity*,  being selfless, disciplined, and tough. I try to put the team first, do what I say I will, and do what's right.
+              This website is exploring interesting topics in computer science and machine learning. I hope that you will find some value in some of the articles and videos I create and I hope that we can all learn something along the way!
             """)
 
             img(src="/static/images/inception.png")
 
-            p() do
-              i("Network-in-Network: A breakthrough approach to deep convoutional networks")
-              sup("1")
+            p("I'm interested in the following fields of computer science:")
+
+            ul() do
+              li("Neural Network Architectures")
+              li("Evolutionary Algorithms")
+              li("Data Science and Analytics")
+              li("Full Stack Web Development")
+              li("Programming Language Theory")
             end
 
             p("""
-
+              If you want to get in touch, please reach out to info@whitsworks.com
             """)
-            
-            p("""
-              We want to be the number one resource for algorithmic trading models and tools. We believe in sharing our research and experiments and we hope that we can foster an open and collaborative community.
-            """)
-
-            p("""
-              If you want to get in touch, please reach out to info@whitsworks.com.
-            """)
-
-            p() do
-              small("[1]: https://arxiv.org/pdf/1312.4400v3.pdf")
-            end
           end
 
           aside() do
