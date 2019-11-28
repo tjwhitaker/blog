@@ -39,28 +39,44 @@ html(lang="en") do
         div(class="grid") do
           article() do
             p("""
-              Welcome! I'm Tim Whitaker and Whit's Works is the umbrella under which I make stuff. I've been programming for almost 15 years and I'm currently a graduate researcher at Colorado State University studying evolutionary neural networks.
+              Welcome! I'm Tim Whitaker and Whit's Works is the umbrella under which I make stuff. I created this site to showcase some of my projects and to explore exciting topics in computer science.
             """)
-            
+
             p("""
-              This website is exploring interesting topics in computer science and machine learning. I hope that you will find some value in some of the articles and videos I create and I hope that we can all learn something along the way!
+              I've been programming for almost 15 years. I love programming and I want to share that passion with you by creating helpful articles, videos and tools.
             """)
 
             img(src="/static/images/inception.png")
 
-            p("I'm interested in the following fields of computer science:")
+            p() do
+              i() do
+                text("Network-in-Network: A breakthrough approach to convolutional filters")
+                sup(" [1]")
+              end
+            end
+
+            p("""
+              I've spent most of my career doing full stack web development but now I've decided to go back to school to pursue research in machine learning. I'm currently at Colorado State University and I'm loving it! Some of my research interests include:
+            """)
 
             ul() do
               li("Neural Network Architectures")
               li("Evolutionary Algorithms")
-              li("Data Science and Analytics")
-              li("Full Stack Web Development")
+              li("High Performance Computing")
               li("Programming Language Theory")
+              li("Exploratory Data Analysis")
             end
 
             p("""
               If you want to get in touch, please reach out to info@whitsworks.com
             """)
+
+            div(class="citations") do
+              p() do
+                text("[1]: ")
+                i("https://arxiv.org/abs/1312.4400")
+              end
+            end
           end
 
           aside() do
