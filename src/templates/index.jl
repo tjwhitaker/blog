@@ -56,15 +56,17 @@ html(lang="en") do
             end
 
             p("""
-              I've spent most of my career doing full stack web development but now I've decided to go back to school to pursue research in machine learning. I'm currently at Colorado State University and I'm loving it! Some of my research interests include:
+              I've spent most of my career doing full stack web development but now I'm back in school and pursuing research in machine learning. I'm currently at Colorado State University and I'm loving it!
             """)
+
+            p("Some of my research interests include:")
 
             ul() do
               li("Neural Network Architectures")
               li("Evolutionary Algorithms")
-              li("High Performance Computing")
               li("Programming Language Theory")
-              li("Exploratory Data Analysis")
+              li("High Performance Computing")
+              li("Software Engineering")
             end
 
             p("""

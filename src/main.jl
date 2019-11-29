@@ -1,5 +1,4 @@
-include("../Stasis.jl/src/Stasis.jl")
-using .Stasis
+using Stasis
 
 # Collection of post metadata for index and blog
 feed = []
