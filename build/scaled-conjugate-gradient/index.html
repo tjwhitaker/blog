@@ -2,9 +2,10 @@
 </a><a href="https://github.com/takeprophet" target="_blank">  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="code" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="svg-inline--fa fa-code fa-w-20 fa-3x"><path fill="currentColor" d="M278.9 511.5l-61-17.7c-6.4-1.8-10-8.5-8.2-14.9L346.2 8.7c1.8-6.4 8.5-10 14.9-8.2l61 17.7c6.4 1.8 10 8.5 8.2 14.9L293.8 503.3c-1.9 6.4-8.5 10.1-14.9 8.2zm-114-112.2l43.5-46.4c4.6-4.9 4.3-12.7-.8-17.2L117 256l90.6-79.7c5.1-4.5 5.5-12.3.8-17.2l-43.5-46.4c-4.5-4.8-12.1-5.1-17-.5L3.8 247.2c-5.1 4.7-5.1 12.8 0 17.5l144.1 135.1c4.9 4.6 12.5 4.4 17-.5zm327.2.6l144.1-135.1c5.1-4.7 5.1-12.8 0-17.5L492.1 112.1c-4.8-4.5-12.4-4.3-17 .5L431.6 159c-4.6 4.9-4.3 12.7.8 17.2L523 256l-90.6 79.7c-5.1 4.5-5.5 12.3-.8 17.2l43.5 46.4c4.5 4.9 12.1 5.1 17 .6z" class=""></path></svg>
 </a><a href="#">  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-envelope fa-w-16 fa-3x"><path fill="currentColor" d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z" class=""></path></svg>
 </a></nav></div></div></header><main><div class="wrapper"><div class="grid"><article><p>The scaled conjugate gradient is a powerful optimization algorithm for training neural networks. Martin Møller published this method in 1997 as a part of his Ph.D. research &#91;1&#93;. It trains networks way faster &#40;10x&#43;&#41; than the most popular optimizers, stochastic gradient descent and adaptive moment estimation.</p>
-<p>Classical optimizers take steps down a gradient according to a learning rate. Scaled conjugate gradient eschews the learning rate and jumps to the apporiximate minimum in that direction directly.</p>
 <p>How does it work?</p>
-<p>First we&#39;ll start with the conjugate gradient method.</p>
+<h2>Background</h2>
+<p>The first derivative of a function will give us the direction to step in. The second derivative gives us the distance to step.</p>
+<h3>Derivation</h3>
 <p>Taylor series:</p>
 &#36;&#36;f&#40;x &#43; &#123;\Delta&#125;x&#41; &#61; \sum\limits_&#123;n&#61;0&#125;^&#123;\infty&#125; \frac&#123;f^&#123;&#40;n&#41;&#125;&#40;x&#41; \Delta x^n&#125;&#123;n&#33;&#125;&#36;&#36;
 <p>Truncate it to approximate:</p>
@@ -21,9 +22,15 @@
 &#36;&#36;&#123;\nabla_w&#125; f &#61; &#40;\frac&#123;\partial f&#125;&#123;\partial w_1&#125;,\ \frac&#123;\partial f&#125;&#123;\partial w_2&#125;,\ \dots \ ,\ \frac&#123;\partial f&#125;&#123;\partial w_n&#125;&#41;&#36;&#36;
 <p>The second derivative then is the matrix &#36;\frac&#123;\partial^2 f&#125;&#123;\partial w_i \partial w_j&#125;&#36; written as the hessian:</p>
 &#36;&#36;\nabla^2_w f &#61;
+\large
 \begin&#123;pmatrix&#125;
-a &amp; b \\
-c &amp; d 
+\frac&#123;\partial^2 f&#125;&#123;\partial w_1 \partial w_1&#125; &amp; \frac&#123;\partial^2 f&#125;&#123;\partial w_1 \partial w_2&#125; &amp; \dots &amp; \frac&#123;\partial^2 f&#125;&#123;\partial w_1 \partial w_n&#125; \\&#91;1.5ex&#93;
+\frac&#123;\partial^2 f&#125;&#123;\partial w_2 \partial w_1&#125; &amp; \frac&#123;\partial^2 f&#125;&#123;\partial w_2 \partial w_2&#125; &amp; \dots &amp; \frac&#123;\partial^2 f&#125;&#123;\partial w_2 \partial w_n&#125; \\&#91;1ex&#93;
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\&#91;1ex&#93;
+\frac&#123;\partial^2 f&#125;&#123;\partial w_n \partial w_1&#125; &amp; \frac&#123;\partial^2 f&#125;&#123;\partial w_n \partial w_1&#125; &amp; \dots &amp; \frac&#123;\partial^2 f&#125;&#123;\partial w_n \partial w_n&#125; \\
 \end&#123;pmatrix&#125;&#36;&#36;
+<p>The hessian is computationally complex and memory hungry to construct, so the scaled conjugate gradient algorithm proposes a way to estimate it using a non-symmetric approximation.</p>
+<p>Here we use new terms to describe the step size.</p>
+&#36;&#36;s &#61; \nabla^2_w f&#40;x&#41; \Delta x \approx \frac&#123;\nabla_w f&#40;x &#43; \sigma \Delta x&#41; - \nabla_w f&#40;x&#41;&#125;&#123;\sigma&#125; &#43; \lambda \Delta x&#36;&#36;
 <p>&#91;1&#93;: http://citeseerx.ist.psu.edu/viewdoc/download?doi&#61;10.1.1.50.8063&amp;rep&#61;rep1&amp;type&#61;pdf</p>
-</article></div><aside><h5 class="minion"></h5></aside></div></main><footer><div class="wrapper"></div></footer><script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body, {'delimiters': [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script></body></html>
+</article><aside><h5 class="minion">Meta</h5></aside></div></div></main><footer><div class="wrapper"></div></footer><script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body, {'delimiters': [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script></body></html>

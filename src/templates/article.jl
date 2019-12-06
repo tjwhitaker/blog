@@ -43,13 +43,14 @@ html(lang="en") do
           article() do
             raw(context["content"])
           end
-        end
 
-        aside() do
-          h5("", class="minion")
+          aside() do
+            h5("Meta", class="minion")
+          end
         end
       end
     end
+
     footer() do
       div(class="wrapper")
     end

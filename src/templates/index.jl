@@ -96,6 +96,7 @@ html(lang="en") do
         end
       end
     end
+
     footer() do
       div(class="wrapper")
     end

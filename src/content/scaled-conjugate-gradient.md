@@ -8,11 +8,14 @@ excerpt = "The scaled conjugate gradient is a powerful optimization algorithm fo
 
 The scaled conjugate gradient is a powerful optimization algorithm for training neural networks. Martin Møller published this method in 1997 as a part of his Ph.D. research [1]. It trains networks way faster (10x+) than the most popular optimizers, stochastic gradient descent and adaptive moment estimation.
 
-Classical optimizers take steps down a gradient according to a learning rate. Scaled conjugate gradient eschews the learning rate and jumps to the apporiximate minimum in that direction directly.
 
 How does it work?
 
-First we'll start with the conjugate gradient method.
+## Background
+
+The first derivative of a function will give us the direction to step in. The second derivative gives us the distance to step.
+
+### Derivation
 
 Taylor series:
 
@@ -48,12 +51,24 @@ When applied to neural networks, we want to minimize a loss function over all th
 
 The second derivative then is the matrix `` \frac{\partial^2 f}{\partial w_i \partial w_j} `` written as the hessian:
 
-
 ```math
 \nabla^2_w f =
+\large
 \begin{pmatrix}
-a & b \\
-c & d 
+\frac{\partial^2 f}{\partial w_1 \partial w_1} & \frac{\partial^2 f}{\partial w_1 \partial w_2} & \dots & \frac{\partial^2 f}{\partial w_1 \partial w_n} \\[1.5ex]
+\frac{\partial^2 f}{\partial w_2 \partial w_1} & \frac{\partial^2 f}{\partial w_2 \partial w_2} & \dots & \frac{\partial^2 f}{\partial w_2 \partial w_n} \\[1ex]
+\vdots & \vdots & \ddots & \vdots \\[1ex]
+\frac{\partial^2 f}{\partial w_n \partial w_1} & \frac{\partial^2 f}{\partial w_n \partial w_1} & \dots & \frac{\partial^2 f}{\partial w_n \partial w_n} \\
 \end{pmatrix}
 ```
+
+The hessian is computationally complex and memory hungry to construct, so the scaled conjugate gradient algorithm proposes a way to estimate it using a non-symmetric approximation.
+
+Here we use new terms to describe the step size.
+
+```math
+s = \nabla^2_w f(x) \Delta x \approx \frac{\nabla_w f(x + \sigma \Delta x) - \nabla_w f(x)}{\sigma} + \lambda \Delta x
+```
+
+
 [1]: http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.50.8063&rep=rep1&type=pdf
