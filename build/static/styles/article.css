@@ -5,3 +5,23 @@
 .katex-display {
   margin: 2em 0 0;
 }
+
+.newsletter {
+  margin-top: 1em;
+}
+
+.newsletter h5 {
+  line-height: 1;
+}
+
+.newsletter input {
+  display: block;
+  width: 100%;
+  border: none;
+  margin: 1em 0;
+  padding: 0.5em;
+}
+
+.newsletter button {
+  padding: 0.5rem;
+}

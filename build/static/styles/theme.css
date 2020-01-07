@@ -26,6 +26,11 @@ a:hover, a:active, a:focus {
   color: #00e676;
 }
 
+button {
+  background: white;
+  border: none;
+}
+
 .minion {
   color: #949494;
   text-transform: uppercase;
@@ -107,6 +112,34 @@ pre code {
 }
 .grid aside {
   padding-left: 1rem;
+}
+
+.meta {
+  margin-top: 1em;
+}
+
+.meta p {
+  margin-top: 1em;
+}
+
+.newsletter {
+  margin-top: 1em;
+}
+
+.newsletter h5 {
+  line-height: 1;
+}
+
+.newsletter input {
+  display: block;
+  width: 100%;
+  border: none;
+  margin: 1em 0;
+  padding: 0.5em;
+}
+
+.newsletter button {
+  padding: 0.5rem;
 }
 
 .citations {

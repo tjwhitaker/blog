@@ -36,13 +36,20 @@ body {
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
-  line-height: 1.43;
+  line-height: 1.618;
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
-ul,
-ol {
+ul {
   list-style: inside;
+}
+
+ol {
+  list-style: inside decimal;
+}
+
+ul li, ol li {
+  margin-top: 2.427em;
 }
 
 ul p, 
@@ -58,7 +65,7 @@ img {
 
 /* Natural flow and rhythm in articles by default */
 article > * + * {
-  margin-top: 2em;
+  margin-top: 2.427em;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -67,4 +74,9 @@ button,
 textarea,
 select {
   font: inherit;
+}
+
+img {
+  display: block;
+  width: 100%;
 }

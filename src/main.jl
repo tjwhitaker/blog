@@ -1,3 +1,4 @@
+using Dates
 using Stasis
 
 # Collection of post metadata for index and blog
@@ -17,6 +18,9 @@ for file in Stasis.walk("src/content")
     content=content
   )
 end
+
+
+sort!(feed, by=x->Date(x["date"]), rev=true)
 
 # Build static pages
 Stasis.build(template="src/templates/index.jl", output="build/index.html", posts=feed)

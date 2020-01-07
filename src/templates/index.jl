@@ -25,7 +25,7 @@ html(lang="en") do
             """, href="/")
             a(raw"""
               <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="code" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="svg-inline--fa fa-code fa-w-20 fa-3x"><path fill="currentColor" d="M278.9 511.5l-61-17.7c-6.4-1.8-10-8.5-8.2-14.9L346.2 8.7c1.8-6.4 8.5-10 14.9-8.2l61 17.7c6.4 1.8 10 8.5 8.2 14.9L293.8 503.3c-1.9 6.4-8.5 10.1-14.9 8.2zm-114-112.2l43.5-46.4c4.6-4.9 4.3-12.7-.8-17.2L117 256l90.6-79.7c5.1-4.5 5.5-12.3.8-17.2l-43.5-46.4c-4.5-4.8-12.1-5.1-17-.5L3.8 247.2c-5.1 4.7-5.1 12.8 0 17.5l144.1 135.1c4.9 4.6 12.5 4.4 17-.5zm327.2.6l144.1-135.1c5.1-4.7 5.1-12.8 0-17.5L492.1 112.1c-4.8-4.5-12.4-4.3-17 .5L431.6 159c-4.6 4.9-4.3 12.7.8 17.2L523 256l-90.6 79.7c-5.1 4.5-5.5 12.3-.8 17.2l43.5 46.4c4.5 4.9 12.1 5.1 17 .6z" class=""></path></svg>
-            """, href="https://github.com/takeprophet", target="_blank")
+            """, href="https://github.com/whitsworks", target="_blank")
             a(raw"""
               <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-envelope fa-w-16 fa-3x"><path fill="currentColor" d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z" class=""></path></svg>
             """, href="#")
@@ -34,55 +34,10 @@ html(lang="en") do
       end
     end
 
-    main() do
-      div(class="wrapper") do
-        div(class="grid") do
-          article() do
-            p("""
-              Welcome! I'm Tim Whitaker and Whit's Works is the umbrella under which I make stuff. I created this site to showcase some of my projects and to explore exciting topics in computer science.
-            """)
-
-            p("""
-              I've been programming for almost 15 years. I love programming and I want to share that passion with you by creating helpful articles, videos and tools.
-            """)
-
-            img(src="/static/images/inception.png")
-
-            p() do
-              i() do
-                text("Network-in-Network: A breakthrough approach to convolutional filters")
-                sup(" [1]")
-              end
-            end
-
-            p("""
-              I've spent most of my career doing full stack web development but now I'm back in school and pursuing research in machine learning. I'm currently at Colorado State University and I'm loving it!
-            """)
-
-            p("Some of my research interests include:")
-
-            ul() do
-              li("Neural Network Architectures")
-              li("Evolutionary Algorithms")
-              li("Programming Language Theory")
-              li("High Performance Computing")
-              li("Software Engineering")
-            end
-
-            p("""
-              If you want to get in touch, please reach out to info@whitsworks.com
-            """)
-
-            div(class="citations") do
-              p() do
-                text("[1]: ")
-                i("https://arxiv.org/abs/1312.4400")
-              end
-            end
-          end
-
-          aside() do
-            h5("Feed", class="minion")
+    div(class="wrapper") do
+      div(class="grid") do
+        main() do
+          div(class="posts") do
             for post in context["posts"]
               div(class="post") do
                 a(href="/$(post["slug"])") do
@@ -92,6 +47,21 @@ html(lang="en") do
                 end
               end
             end
+          end
+        end
+
+        aside() do
+          h5("Meta", class="minion")
+          div(class="meta") do
+            img(src="https://algonomicon.com/static/11f49b365e7285572c5b55109afa5d40/d47f1/office.jpg")
+            p("I'm Tim Whitaker. I do research in machine learning and am writing about it.")
+          end
+
+          h5("Newsletter", class="minion")
+          div(class="newsletter") do
+            h3("Want more from Whit's Works?")
+            input(type="email", placeholder="Email")
+            button("Sign Me Up")
           end
         end
       end

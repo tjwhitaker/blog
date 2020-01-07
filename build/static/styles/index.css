@@ -1,6 +1,23 @@
+main {
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  padding-right: 1rem;
+}
+
+.wrapper {
+  padding-top:0;
+}
+
+header .wrapper {
+  padding-top: 1rem;
+}
+
 .post {
   padding: 1rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.post:first-child {
+  padding-top: 0;
 }
 
 .post a p {
