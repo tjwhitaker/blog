@@ -27,8 +27,14 @@ a:hover, a:active, a:focus {
 }
 
 button {
-  background: white;
+  background: rgba(255, 255, 255, 0.2);
+  color:white;
   border: none;
+}
+
+input {
+  background: rgba(255, 255, 255, 0.2);
+  color:white;
 }
 
 .minion {
@@ -103,7 +109,7 @@ pre code {
 
 .grid {
   display: grid;
-  grid-template-columns: minmax(0px, 2fr) minmax(0px, 1fr);
+  grid-template-columns: minmax(0px, 2.5fr) minmax(0px, 1fr);
 }
 
 .grid article {
