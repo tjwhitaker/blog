@@ -2,7 +2,7 @@ html(lang="en") do
   head() do
     meta(charset="utf-8")
     meta(name="viewport", content="width=device-width, initial-scale=1")
-    title("$(context["meta"]["title"]) | Whit's Works")
+    title("$(context["meta"]["title"]) | Wit's Works")
 
     link(rel="icon", href="/static/favicon.ico")
     link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Fira+Mono:400,500,700|Fira+Sans:400,500,700&display=swap")
@@ -19,7 +19,7 @@ html(lang="en") do
       div(class="wrapper") do
         div(class="masthead") do
           div(class="logo") do
-            a("Whit's Works", class="title", href="/")
+            a("Wit's Works", class="title", href="/")
           end
           
           nav() do
@@ -44,20 +44,7 @@ html(lang="en") do
             raw(context["content"])
           end
 
-          aside() do
-            h5("Meta", class="minion")
-            div(class="meta") do
-              img(src="https://algonomicon.com/static/11f49b365e7285572c5b55109afa5d40/d47f1/office.jpg")
-              p("I'm Tim Whitaker. I do research in machine learning and am writing about it.")
-              end
-  
-            h5("Newsletter", class="minion")
-            div(class="newsletter") do
-              h3("Want more from Whit's Works?")
-              input(type="email", placeholder="Email")
-              button("Sign Me Up")
-            end
-          end
+          partial("src/templates/sidebar.jl")
         end
       end
     end
