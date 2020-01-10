@@ -2,7 +2,7 @@ html(lang="en") do
   head() do
     meta(charset="utf-8")
     meta(name="viewport", content="width=device-width, initial-scale=1")
-    title("404 Page Not Found | Take Prophet")
+    title("404 Page Not Found | Tim Whitaker")
 
     link(rel="icon", href="/static/favicon.ico")
     link(rel="stylesheet", href="/static/styles/reset.css")
@@ -15,7 +15,7 @@ html(lang="en") do
       div(class="wrapper") do
         div(class="masthead") do
           div(class="logo") do
-            a("Take Prophet", class="title", href="/")
+            a("Tim Whitaker", class="title", href="/")
           end
           
           nav() do

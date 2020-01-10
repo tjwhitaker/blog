@@ -2,7 +2,7 @@ html(lang="en") do
   head() do
     meta(charset="utf-8")
     meta(name="viewport", content="width=device-width, initial-scale=1")
-    title("$(context["meta"]["title"]) | Wit's Works")
+    title("$(context["meta"]["title"]) | Tim Whitaker")
 
     link(rel="icon", href="/static/favicon.ico")
     link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Fira+Mono:400,500,700|Fira+Sans:400,500,700&display=swap")
@@ -19,7 +19,7 @@ html(lang="en") do
       div(class="wrapper") do
         div(class="masthead") do
           div(class="logo") do
-            a("Wit's Works", class="title", href="/")
+            a("Tim Whitaker", class="title", href="/")
           end
           
           nav() do
