@@ -3,11 +3,20 @@
 }
 
 .katex-display {
-  margin: 2em 0 0;
+  margin: 2rem 0 0;
+}
+
+.title {
+  font-size: 1.4rem;
+  line-height: 1.618;
+}
+
+.title + * {
+  margin-top: 1rem;
 }
 
 .newsletter {
-  margin-top: 1em;
+  margin-top: 1rem;
 }
 
 .newsletter h5 {
@@ -18,8 +27,8 @@
   display: block;
   width: 100%;
   border: none;
-  margin: 1em 0;
-  padding: 0.5em;
+  margin: 1rem 0;
+  padding: 0.5rem;
 }
 
 .newsletter button {

@@ -49,7 +49,7 @@ ol {
 }
 
 ul li, ol li {
-  margin-top: 2.427em;
+  margin-top: 2rem;
 }
 
 ul p, 
@@ -64,8 +64,9 @@ img {
 }
 
 /* Natural flow and rhythm in articles by default */
-article > * + * {
-  margin-top: 2.427em;
+article > * + *,
+.post > * + * {
+  margin-top: 2rem;
 }
 
 /* Inherit fonts for inputs and buttons */

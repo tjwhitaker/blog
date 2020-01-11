@@ -8,7 +8,7 @@ header .wrapper {
 }
 
 .post {
-  padding: 2em 0;
+  padding: 2rem 0;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -24,15 +24,11 @@ header .wrapper {
 }
 
 .post .title + * {
-  margin-top:1em;
+  margin-top:1rem;
 }
 
 .post small {
   font-weight: normal;
   display: block;
   color: #949494;
-}
-
-.post > * + * {
-  margin-top: 2rem;
 }
