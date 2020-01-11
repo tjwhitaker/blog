@@ -7,7 +7,7 @@ aside() do
 
   h5("Newsletter", class="minion")
   div(class="newsletter") do
-    h3("Want to stay updated?")
+    h2("Want to stay updated?")
     input(type="email", placeholder="Email")
     button("Sign Me Up")
   end

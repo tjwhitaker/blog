@@ -8,7 +8,7 @@ header .wrapper {
 }
 
 .post {
-  padding: 1rem 0;
+  padding: 2em 0;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -20,7 +20,11 @@ header .wrapper {
 .post .title {
   display: block;
   font-family: Fira Sans, sans-serif;
-  font-size: 1.236em;
+  font-size: 1.4rem;
+}
+
+.post .title + * {
+  margin-top:1em;
 }
 
 .post small {
@@ -30,5 +34,5 @@ header .wrapper {
 }
 
 .post > * + * {
-  margin-top: 0.5em;
+  margin-top: 2rem;
 }

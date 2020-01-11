@@ -132,8 +132,9 @@ pre code {
   margin-top: 1em;
 }
 
-.newsletter h5 {
-  line-height: 1;
+.newsletter h2 {
+  line-height: 1.618;
+  font-size: 1.4rem;
 }
 
 .newsletter input {
