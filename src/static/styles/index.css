@@ -14,24 +14,21 @@ header .wrapper {
 
 .post:first-child {
   padding-top: 0;
-  border-top:0;
+  border-top: 0;
 }
 
-.post a p {
-  color: #d4d4d4;
-  font-weight: normal;
+.post .title {
+  display: block;
+  font-family: Fira Sans, sans-serif;
+  font-size: 1.236em;
 }
 
-.post a small {
+.post small {
   font-weight: normal;
   display: block;
   color: #949494;
 }
 
-.post a > * + * {
+.post > * + * {
   margin-top: 0.5em;
-}
-
-.post a:hover > h3 {
-  color: #00e676;
 }
