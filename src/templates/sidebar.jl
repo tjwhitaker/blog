@@ -5,7 +5,13 @@ aside() do
     p("Hello everyone. I do research in machine learning and am writing about it.")
   end
 
-  h5("Newsletter", class="minion")
+  h5("Search", class="minion")
+  div(class="newsletter") do
+    input(type="text", placeholder="Search")
+    button("Search")
+  end
+
+  h5("Subscribe", class="minion")
   div(class="newsletter") do
     h2("Want to stay updated?")
     input(type="email", placeholder="Email")

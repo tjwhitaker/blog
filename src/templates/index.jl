@@ -22,7 +22,7 @@ html(lang="en") do
               div(class="post") do
                 a(post["meta"]["title"], href="/$(post["meta"]["slug"])", class="title")
                 raw(post["content"])
-                small(post["meta"]["category"] * " from " * post["meta"]["date"])
+                small("from " * post["meta"]["date"])
               end
             end
           end
