@@ -4,11 +4,11 @@ slug = "neural-darwinism"
 date = "2020-1-2"
 +++
 
-I'm starting my work as a graduate researcher tomorrow I'm very excited to start so I thought I'd open with a little intro into what we're going to be working on.
+I'm starting my work as a graduate researcher tomorrow. I'm very excited to start so I thought I'd open with a little intro into what we're going to be working on.
 
 Our research is going to be tackling the generalization part of artificial general intelligence. That is, how do we build machine learning models that can handle millions of tasks and generalize to new tasks it may have never seen?
 
-We are approaching this problem with inspiration from neural networks, evolutionary algorithms, and a large scale theory of brain function called neural darwinism.
+We are approaching this problem with the interection of machine learning and evolutionary algorithms inspired by the large scale theory of brain function called neural darwinism.
 
 
 

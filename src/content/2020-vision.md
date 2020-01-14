@@ -1,6 +1,7 @@
 +++
 title = "2020 Vision"
 slug = "2020-vision"
+excerpt = "Happy new year and welcome to my new blog! The past few weeks have been a whirlwind of family, celebration and adventure as Alyssa and I drove almost 5000 miles to California and back. I proposed to her in one of the most important places in the world to us and she said yes! I've known for..."
 date = "2020-1-1"
 +++
 

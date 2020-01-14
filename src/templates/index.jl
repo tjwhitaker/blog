@@ -20,9 +20,11 @@ html(lang="en") do
           div(class="posts") do
             for post in context["posts"]
               div(class="post") do
-                a(post["meta"]["title"], href="/$(post["meta"]["slug"])", class="title")
-                raw(post["content"])
-                small("from " * post["meta"]["date"])
+                a(href="/$(post["slug"])") do
+                  h2(post["title"])
+                  p(post["excerpt"])
+                  small("from " * post["date"])
+                end
               end
             end
           end

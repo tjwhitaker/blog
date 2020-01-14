@@ -8,27 +8,30 @@ header .wrapper {
 }
 
 .post {
-  padding: 2rem 0;
+  padding: 1rem 0;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .post:first-child {
   padding-top: 0;
-  border-top: 0;
+  border-top:0;
 }
 
-.post .title {
-  display: block;
-  font-family: Fira Sans, sans-serif;
-  font-size: 1.4rem;
+.post a p {
+  color: #d4d4d4;
+  font-weight: normal;
 }
 
-.post .title + * {
-  margin-top:1rem;
-}
-
-.post small {
+.post a small {
   font-weight: normal;
   display: block;
   color: #949494;
+}
+
+.post a > * + * {
+  margin-top: 0.5em;
+}
+
+.post a:hover > h2 {
+  color: #00e676;
 }
