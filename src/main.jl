@@ -9,7 +9,7 @@ for file in Stasis.walk("src/content")
   meta = Stasis.parse_toml(file)
   content = Stasis.parse_markdown(file)
 
-  push!(feed, meta)
+  push!(feed, Dict("meta" => meta, "content" => content))
 
   Stasis.build(
     template="src/templates/article.jl",

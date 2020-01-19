@@ -17,21 +17,18 @@ header .wrapper {
   border-top:0;
 }
 
-.post a p {
-  color: #d4d4d4;
-  font-weight: normal;
+.post .title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-family: Fira Sans, sans-sefif;
 }
 
-.post a small {
+.post small {
   font-weight: normal;
   display: block;
   color: #949494;
 }
 
-.post a > * + * {
+.post > * + * {
   margin-top: 0.5em;
-}
-
-.post a:hover > h2 {
-  color: #00e676;
 }
