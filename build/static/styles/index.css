@@ -20,7 +20,7 @@ header .wrapper {
 .post .title {
   margin: 0;
   font-size: 1.25rem;
-  font-family: Fira Sans, sans-sefif;
+  font-family: Fira Mono, monospace;
 }
 
 .post small {

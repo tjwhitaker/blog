@@ -13,13 +13,13 @@ for file in Stasis.walk("src/content")
 
   Stasis.build(
     template="src/templates/article.jl",
-    output="build/$(meta["slug"])/index.html",
+    output="build/$(meta["date"])/index.html",
     meta=meta,
     content=content
   )
 end
 
-sort!(feed, by=x->Date(x["date"]), rev=true)
+sort!(feed, by=x->Date(x["meta"]["date"]), rev=true)
 
 # Build static pages
 Stasis.build(template="src/templates/index.jl", output="build/index.html", posts=feed)
