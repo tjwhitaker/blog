@@ -22,7 +22,6 @@ html(lang="en") do
               div(class="post") do
                 h2(post["meta"]["date"], class="title")
                 raw(post["content"])
-                small(post["meta"]["tags"])
               end
             end
           end
