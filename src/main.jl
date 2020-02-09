@@ -9,17 +9,17 @@ for file in Stasis.walk("src/content")
   meta = Stasis.parse_toml(file)
   content = Stasis.parse_markdown(file)
 
-  push!(feed, Dict("meta" => meta, "content" => content))
+  push!(feed, meta)
 
   Stasis.build(
     template="src/templates/article.jl",
-    output="build/$(meta["date"])/index.html",
+    output="build/$(meta["slug"])/index.html",
     meta=meta,
     content=content
   )
 end
 
-sort!(feed, by=x->Date(x["meta"]["date"]), rev=true)
+sort!(feed, by=x->Date(x["date"]), rev=true)
 
 # Build static pages
 Stasis.build(template="src/templates/index.jl", output="build/index.html", posts=feed)
