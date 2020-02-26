@@ -6,7 +6,7 @@
   margin: 2rem 0 0;
 }
 
-h2 + * {
+article > * + * {
   margin-top: 1rem;
 }
 

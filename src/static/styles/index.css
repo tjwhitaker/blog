@@ -32,6 +32,6 @@ header .wrapper {
   margin-top: 0.5rem;
 }
 
-.post a:hover > h2 {
+.post a:hover > h3 {
   color: #00e676;
 }
