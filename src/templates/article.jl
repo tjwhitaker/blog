@@ -2,7 +2,7 @@ html(lang="en") do
   head() do
     meta(charset="utf-8")
     meta(name="viewport", content="width=device-width, initial-scale=1")
-    title("$(context["meta"]["date"]) | Tim Whitaker")
+    title("$(context["meta"]["title"]) | Tim Whitaker")
 
     link(rel="icon", href="/static/favicon.ico")
     link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Fira+Mono:400,500,700|Fira+Sans:400,500,700&display=swap")
