@@ -2,7 +2,7 @@ aside() do
   h5("Meta", class="minion")
   div(class="meta") do
     img(src="/static/images/programming.svg")
-    p("Hello everyone. I'm an artificial intelligence researcher and consultant. This is a collection of articles about work and life.")
+    p("Hello everyone. Sharing some of the coolest research in machine learning.")
   end
 
   h5("Subscribe", class="minion")
