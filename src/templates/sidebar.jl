@@ -2,8 +2,13 @@ aside() do
   h5("Meta", class="minion")
   div(class="meta") do
     img(src="/static/images/programming.svg")
-    p("An AI researcher passionate about machine learning and evolutionary algorithms.")
+    p("I'm a research scientist working on artificial intelligence.")
   end
+
+  # h5("Consulting", class="minion")
+  # div(class="sidebar-content") do
+  #   p("Click here to learn about my consulting services.")
+  # end
 
   h5("Subscribe", class="minion")
   div(class="newsletter") do
