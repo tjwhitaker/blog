@@ -10,6 +10,10 @@
   margin-top: 1rem;
 }
 
+.grid article {
+  padding-right: 2rem;
+}
+
 article > * + * {
   margin-top: 2rem;
 }

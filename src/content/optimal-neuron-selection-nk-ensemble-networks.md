@@ -2,18 +2,14 @@
 title = "Optimal Neuron Selection: NK Ensemble Networks"
 slug = "optimal-neuron-selection-nk-ensemble-networks"
 date = "2020-02-01"
-excerpt = "..."
+excerpt = "The NK Ensemble is a neural network architecture that uses group selection for optimization. It avoids back propagation entirely by framing the optimization problem..."
 +++
 
-## Intro 
+The NK Ensemble is a neural network architecture that uses group selection for optimization. It avoids back propagation entirely by framing the optimization problem as a spin glass system that learns by turning off subsets of neurons in the network.
 
-The NK Ensemble is a neural network architecture that uses neuron group selection for optimization. It avoids back propagation entirely and is able to leran by simply turning on and off neurons in a special layer called the probe filter.
+Neuron group selection in neural networks is inspired by a large scale theory of brain development called Neural Darwinism. Gerald Edelman, a nobel prize winning biologist who published this theory, shows that the topology of networks in the brain are a result of selectionist processes during development.
 
-![NK Ensemble Network]()
-
-In its simplest case, the NK Ensemble consists of an input layer, a reservoir layer, a probe filter layer, and an ensemble output layer.
-
-## Background
+![NK Ensemble Network](/static/images/nk.svg)
 
 ## Methods
 
