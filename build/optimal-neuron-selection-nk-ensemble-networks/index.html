@@ -10,6 +10,7 @@
 <h4>Constructing The Network</h4>
 <p>All weights in the network are sampled from a uniform distribution at initialization and fixed throughout the training process.</p>
 <p>The input neurons are connected to every neuron in the reservoir and the reservoir neurons are connected to every neuron in the probe filter layer.</p>
+<p>The reservoir weights are sparsely connected and scaled so that the spectral radius is less than 1. This property ensures that signals from previous iterations wash out over time and allow for short term memory within the network.</p>
 <p>The neurons in the probe filter are connected to &#36;K&#36; neurons in the ensemble output according to an adjacent neighbors pattern i.e. &#36;output_i&#36; is connected to &#36;probe_i&#36;, &#36;probe_&#123;i&#43;1&#125;&#36;, ..., &#36;probe_&#123;i&#43;k&#125;&#36;.</p>
 <h4>State Dynamics</h4>
 <p>The weights of the connections between neurons in the reservoir are initialized such that signals from previous iterations wash out over time. This is called the echo state property and it allows for short term memory within the NK Ensemble.</p>

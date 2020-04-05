@@ -19,16 +19,17 @@ The NK Ensemble consists of 4 layers. An input, a sparsely connected recurrent r
 
 #### Constructing The Network
 
-All weights in the network are sampled from a uniform distribution at initialization and fixed throughout the training process.
+All weights in the network are sampled from a uniform distribution and fixed throughout the training process.
+
+The reservoir weights are sparse and scaled so that the spectral radius is less than 1. This property ensures that signals from previous iterations wash out over time and allow for short term memory within the network.
 
 The input neurons are connected to every neuron in the reservoir and the reservoir neurons are connected to every neuron in the probe filter layer.
 
 The neurons in the probe filter are connected to $K$ neurons in the ensemble output according to an adjacent neighbors pattern i.e. $output_i$ is connected to $probe_i$, $probe_{i+1}$, ..., $probe_{i+k}$.
 
+The weights of the connections between neurons in the reservoir are initialized such that signals from previous iterations wash out over time. This is called the echo state property and it allows for short term memory within the NK Ensemble.
 
 #### State Dynamics
-
-The weights of the connections between neurons in the reservoir are initialized such that signals from previous iterations wash out over time. This is called the echo state property and it allows for short term memory within the NK Ensemble.
 
 The state dynamics of the system are governed by the following equation.
 
@@ -83,5 +84,3 @@ y(x) = \frac{1}{N} \sum_{i=1}^N \alpha_i s(x)
 ```
 
 # References
-
-[1]: 
