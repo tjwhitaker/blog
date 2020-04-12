@@ -5,4 +5,10 @@ date = "2020-03-01"
 excerpt = "..."
 +++
 
-.
+# Summary
+
+# What I dont like
+
+# What I like
+
+# Deeper Questions

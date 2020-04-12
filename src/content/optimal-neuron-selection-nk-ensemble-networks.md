@@ -17,7 +17,7 @@ The NK Ensemble consists of 4 layers. An input, a sparsely connected recurrent r
 
 ![NK Ensemble Network](/static/images/nk.svg)
 
-#### Constructing The Network
+#### State Dynamics
 
 All weights in the network are sampled from a uniform distribution and fixed throughout the training process.
 
@@ -25,45 +25,24 @@ The reservoir weights are sparse and scaled so that the spectral radius is less 
 
 The input neurons are connected to every neuron in the reservoir and the reservoir neurons are connected to every neuron in the probe filter layer.
 
-The neurons in the probe filter are connected to $K$ neurons in the ensemble output according to an adjacent neighbors pattern i.e. $output_i$ is connected to $probe_i$, $probe_{i+1}$, ..., $probe_{i+k}$.
-
-The weights of the connections between neurons in the reservoir are initialized such that signals from previous iterations wash out over time. This is called the echo state property and it allows for short term memory within the NK Ensemble.
-
-#### State Dynamics
-
-The state dynamics of the system are governed by the following equation.
-
 ```math
 s(t) = \phi(W_{in} u(t) + W_{res} s(t-1))
 ```
 
 Where $s(t)$ is the state at the current time step $t$. $W_{in}$ is the input layer weights. $u(t)$ is the input vector at the current time $t$. $W_{res}$ is the reservoir weight matrix. $s(t-1)$ is the state of the previous time step. $\phi$ is a sigmoidal activation function.
 
-```math
-y(t) = W_{out} s(t) x^*
-```
+The neurons in the probe filter are connected to $K$ neurons in the ensemble output according to an adjacent neighbors pattern i.e. $output_i$ is connected to $probe_i$, $probe_{i+1}$, ... $probe_{i+k}$.
 
-#### The Probe Filter Part
-
-#### The Output Ensemble
-
-## Results
-
-## Discussion
-
-## Conclusion
-
-### Echo State
+The probe filter is a bit vector consisting of $N$ ones and zeros. By turning off a neuron, we are turning off all nonlinear interactions connected to that neuron within the reservoir.
 
 ```math
-s(t) = \sigma(W_{in} u(t) + W_{res} s(t-1))
+y(t) = W_{out}s(t)\ m^*
 ```
 
-```math
-y(t) = W_{out} s(t) x^*
-```
+Where $W_{out}$ is the output weight matrix. $s(t)$ is the current state of the network. $m^*$ is the probe filter bit mask.
 
-Hi. $s(t)$ is the state of our echo state network given an input vector $u$ at time step $t$. $\sigma$ is a sigmoid activation function. $W_{in}$ and $W_{res}$ refer to the input weights and reservoir weights respectively.
+
+
 
 ### NK Ensemble State
 

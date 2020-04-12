@@ -7,26 +7,16 @@
 <h2>Network Architecture</h2>
 <p>The NK Ensemble consists of 4 layers. An input, a sparsely connected recurrent reservoir, a probe filter and an ensemble output. The reservoirs and probe filters can be stacked to create deeper networks with more nonlinear interaction.</p>
 <p><img src="/static/images/nk.svg" alt="NK Ensemble Network" /></p>
-<h4>Constructing The Network</h4>
-<p>All weights in the network are sampled from a uniform distribution at initialization and fixed throughout the training process.</p>
-<p>The input neurons are connected to every neuron in the reservoir and the reservoir neurons are connected to every neuron in the probe filter layer.</p>
-<p>The reservoir weights are sparsely connected and scaled so that the spectral radius is less than 1. This property ensures that signals from previous iterations wash out over time and allow for short term memory within the network.</p>
-<p>The neurons in the probe filter are connected to &#36;K&#36; neurons in the ensemble output according to an adjacent neighbors pattern i.e. &#36;output_i&#36; is connected to &#36;probe_i&#36;, &#36;probe_&#123;i&#43;1&#125;&#36;, ..., &#36;probe_&#123;i&#43;k&#125;&#36;.</p>
 <h4>State Dynamics</h4>
-<p>The weights of the connections between neurons in the reservoir are initialized such that signals from previous iterations wash out over time. This is called the echo state property and it allows for short term memory within the NK Ensemble.</p>
-<p>The state dynamics of the system are governed by the following equation.</p>
+<p>All weights in the network are sampled from a uniform distribution and fixed throughout the training process.</p>
+<p>The reservoir weights are sparse and scaled so that the spectral radius is less than 1. This property ensures that signals from previous iterations wash out over time and allow for short term memory within the network.</p>
+<p>The input neurons are connected to every neuron in the reservoir and the reservoir neurons are connected to every neuron in the probe filter layer.</p>
 &#36;&#36;s&#40;t&#41; &#61; \phi&#40;W_&#123;in&#125; u&#40;t&#41; &#43; W_&#123;res&#125; s&#40;t-1&#41;&#41;&#36;&#36;
 <p>Where &#36;s&#40;t&#41;&#36; is the state at the current time step &#36;t&#36;. &#36;W_&#123;in&#125;&#36; is the input layer weights. &#36;u&#40;t&#41;&#36; is the input vector at the current time &#36;t&#36;. &#36;W_&#123;res&#125;&#36; is the reservoir weight matrix. &#36;s&#40;t-1&#41;&#36; is the state of the previous time step. &#36;\phi&#36; is a sigmoidal activation function.</p>
-&#36;&#36;y&#40;t&#41; &#61; W_&#123;out&#125; s&#40;t&#41; x^*&#36;&#36;
-<h4>The Probe Filter Part</h4>
-<h4>The Output Ensemble</h4>
-<h2>Results</h2>
-<h2>Discussion</h2>
-<h2>Conclusion</h2>
-<h3>Echo State</h3>
-&#36;&#36;s&#40;t&#41; &#61; \sigma&#40;W_&#123;in&#125; u&#40;t&#41; &#43; W_&#123;res&#125; s&#40;t-1&#41;&#41;&#36;&#36;
-&#36;&#36;y&#40;t&#41; &#61; W_&#123;out&#125; s&#40;t&#41; x^*&#36;&#36;
-<p>Hi. &#36;s&#40;t&#41;&#36; is the state of our echo state network given an input vector &#36;u&#36; at time step &#36;t&#36;. &#36;\sigma&#36; is a sigmoid activation function. &#36;W_&#123;in&#125;&#36; and &#36;W_&#123;res&#125;&#36; refer to the input weights and reservoir weights respectively.</p>
+<p>The neurons in the probe filter are connected to &#36;K&#36; neurons in the ensemble output according to an adjacent neighbors pattern i.e. &#36;output_i&#36; is connected to &#36;probe_i&#36;, &#36;probe_&#123;i&#43;1&#125;&#36;, ... &#36;probe_&#123;i&#43;k&#125;&#36;.</p>
+<p>The probe filter is a bit vector consisting of &#36;N&#36; ones and zeros. By turning off a neuron, we are turning off all nonlinear interactions connected to that neuron within the reservoir.</p>
+&#36;&#36;y&#40;t&#41; &#61; W_&#123;out&#125;s&#40;t&#41;\ m^*&#36;&#36;
+<p>Where &#36;W_&#123;out&#125;&#36; is the output weight matrix. &#36;s&#40;t&#41;&#36; is the current state of the network. &#36;m^*&#36; is the probe filter bit mask.</p>
 <h3>NK Ensemble State</h3>
 <p>K bounded pseudo boolean function</p>
 &#36;&#36;f&#40;x&#41; &#61; \sum_&#123;i&#61;1&#125;^N f_i&#40;x&#39;&#41;&#36;&#36;
@@ -34,5 +24,4 @@
 &#36;&#36;y&#40;x&#41; &#61; \frac&#123;1&#125;&#123;N&#125; \sum_&#123;i&#61;1&#125;^N \alpha_i s&#40;x&#41;&#36;&#36;
 &#36;&#36;\alpha_i &#61; \frac&#123;f_i&#40;x*&#41;&#125;&#123;\sum_&#123;i&#61;1&#125;^N f_i&#40;x*&#41;&#125;&#36;&#36;
 <h1>References</h1>
-<p>&#91;1&#93;: </p>
 </article><aside><h5 class="minion">Meta</h5><div class="meta"><img src="/static/images/programming.svg"><p>A research scientist interested in artificial intelligence, evolution and neuroscience.</p></div><h5 class="minion">Subscribe</h5><div class="newsletter"><h3>Want to stay updated?</h3><input type="email" placeholder="Email"><button>Sign Me Up</button></div></aside></div></div></main><footer><div class="wrapper"></div></footer><script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body, {'delimiters': [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script></body></html>

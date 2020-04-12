@@ -1,14 +1,7 @@
-What is the problem?
-Introduction
+Summary
 
-How did I solve the problem?
-Methods
+What I Don't Like
 
-What did I find out?
-Results
+What I Like
 
-What does it mean?
-Discussion
-
-Who helped me out?
-References
+Further Questions
