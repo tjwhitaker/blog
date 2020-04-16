@@ -7,8 +7,6 @@ excerpt = "..."
 
 # Summary
 
-# What I dont like
-
-# What I like
+# Critiques
 
 # Deeper Questions

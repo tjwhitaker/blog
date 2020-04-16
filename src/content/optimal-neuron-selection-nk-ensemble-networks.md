@@ -40,26 +40,3 @@ y(t) = W_{out}s(t)\ m^*
 ```
 
 Where $W_{out}$ is the output weight matrix. $s(t)$ is the current state of the network. $m^*$ is the probe filter bit mask.
-
-
-
-
-### NK Ensemble State
-
-K bounded pseudo boolean function
-
-```math
-f(x) = \sum_{i=1}^N f_i(x')
-```
-
-Probe Filter layer state
-
-```math
-y(x) = \frac{1}{N} \sum_{i=1}^N \alpha_i s(x)
-```
-
-```math
-\alpha_i = \frac{f_i(x*)}{\sum_{i=1}^N f_i(x*)}
-```
-
-# References
