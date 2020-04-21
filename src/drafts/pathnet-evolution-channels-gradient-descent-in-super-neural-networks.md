@@ -10,3 +10,9 @@ date = "2020-04-01"
 
 Authors: Chrisantha Fernando, Dylan Banarse, Charles Blundell, Yori Zwols, David Ha, Andrei A. Rusu, Alexander Pritzel, Daan Wierstra
 Source: [PDF](https://arxiv.org/pdf/1701.08734.pdf)
+
+# Summary
+
+# Critique
+
+# Discussion
