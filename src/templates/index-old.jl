@@ -16,33 +16,21 @@ html(lang="en") do
 
     div(class="wrapper") do
       div(class="grid") do
-        
         main() do
-          section(class="notes-index") do
-            p("Welcome! I'm Tim and I'm a computer scientist studying artificial intelligence. Here you will find a collection of personal notes I've been compiling on all sorts of cool topics.")
-            p("Here are some useful entry points:")
-            ul() do
-              li() do
-                a("Machine Learning", href="/machine-learning")
-              end
-            end
-          end
-
-          section(class="random-notes") do
-            h5("Random Notes", class="minion")
-            div(class="notes") do
-              for note in context["notes"]
-                div(class="note") do
-                  a(href="/$(note["slug"])") do
-                    h3(note["title"])
-                    p(note["description"])
-                    small("from " * note["date"])
-                  end
+          div(class="posts") do
+            for post in context["posts"]
+              div(class="post") do
+                a(href="/$(post["slug"])") do
+                  h3(post["title"])
+                  p(post["excerpt"])
+                  small("from " * post["date"])
                 end
               end
             end
           end
         end
+
+        # partial("src/templates")
 
         partial("src/templates/sidebar.jl")
       end

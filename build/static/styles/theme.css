@@ -42,6 +42,14 @@ input {
   opacity: 1;
 }
 
+ul, ol {
+  margin-top:0.5rem;
+}
+
+ul li, ol li {
+  margin:0;
+}
+
 .minion {
   color: #949494;
   text-transform: uppercase;

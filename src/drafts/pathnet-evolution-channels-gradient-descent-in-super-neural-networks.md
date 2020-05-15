@@ -13,6 +13,10 @@ Source: [PDF](https://arxiv.org/pdf/1701.08734.pdf)
 
 # Summary
 
+What will the neural networks of the future look like? These researchers suggest that shared training of one super giant neural network, capable of learning many varied tasks, is a step towards artificial general intelligence.
+
+PathNet introduces an evolutionary algorithm where agents are embedded in the network to find good pathways to re-use for new tasks.
+
 # Critique
 
 # Discussion

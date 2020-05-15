@@ -4,8 +4,8 @@ using Stasis
 # Collection of post metadata for index and blog
 feed = []
 
-# Parse markdown and build articles
-for file in Stasis.walk("src/content")
+# Parse markdown and build notes
+for file in Stasis.walk("src/notes")
   meta = Stasis.parse_toml(file)
   content = Stasis.parse_markdown(file)
 
@@ -19,10 +19,8 @@ for file in Stasis.walk("src/content")
   )
 end
 
-sort!(feed, by=x->Date(x["date"]), rev=true)
-
 # Build static pages
-Stasis.build(template="src/templates/index.jl", output="build/index.html", posts=feed)
+Stasis.build(template="src/templates/index.jl", output="build/index.html", notes=feed)
 Stasis.build(template="src/templates/404.jl", output="build/404.html")
 
 # Copy static files
