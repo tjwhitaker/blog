@@ -17,12 +17,21 @@ header .wrapper {
   margin-top:2rem;
 }
 
+.random-notes .notes {
+  display:flex;
+  flex-wrap:wrap;
+  margin:-0.5rem;
+  padding-top:1rem;
+}
+
 .note {
-  padding: 1rem 0;
+  flex:1 0 auto;
+  padding: 1rem;
+  margin: 0.5rem;
+  background: #282828;
 }
 
 .note a p {
-  color: #d4d4d4;
   font-weight: normal;
 }
 

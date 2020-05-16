@@ -1,7 +1,7 @@
 html,
 body {
-  background: #121212;
-  color: #d4d4d4;
+  background: #181818;
+  color: #ede7dd;
   font-family: Fira Mono, monospace;
 }
 
@@ -27,13 +27,13 @@ a:hover, a:active, a:focus {
 }
 
 button {
-  background: rgba(255, 255, 255, 0.2);
+  background: #282828;
   color:white;
   border: none;
 }
 
 input {
-  background: rgba(255, 255, 255, 0.2);
+  background: #282828;
   color:white;
 }
 

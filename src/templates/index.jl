@@ -19,11 +19,17 @@ html(lang="en") do
         
         main() do
           section(class="notes-index") do
-            p("Welcome! I'm Tim and I'm a computer scientist studying artificial intelligence. Here you will find a collection of personal notes I've been compiling on all sorts of cool topics.")
+            p("Welcome! I'm a computer scientist studying artificial intelligence. Here you will find a collection of personal notes I've been compiling on all sorts of cool topics.")
             p("Here are some useful entry points:")
             ul() do
               li() do
-                a("Machine Learning", href="/machine-learning")
+                a("Mathematics", href="/mathematics")
+              end
+              li() do
+                a("Neural Networks", href="/neural-networks")
+              end
+              li() do
+                a("Reinforcement Learning", href="/reinforcement-learning")
               end
             end
           end
