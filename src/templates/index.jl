@@ -42,7 +42,6 @@ html(lang="en") do
                   a(href="/$(note["slug"])") do
                     h3(note["title"])
                     p(note["description"])
-                    small("from " * note["date"])
                   end
                 end
               end

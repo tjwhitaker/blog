@@ -2,7 +2,6 @@
 title = "Echo State Network"
 slug = "echo-state-network"
 description = "A recurrent reservoir based neural network."
-date = "2020-05-01"
 +++
 
 The echo state network is a recurrent neural network that uses a hidden reservoir of sparsely and randomly connected neurons. The reservoir weights are fixed and scaled to a spectral radius of less than one. This property allows signals to die out over time and allows for a kind of short term memory within the system. Echo State Networks excel at small problems with small input spaces.

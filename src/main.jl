@@ -1,4 +1,4 @@
-using Dates
+using Random
 using Stasis
 
 # Collection of post metadata for index and blog
@@ -20,7 +20,7 @@ for file in Stasis.walk("src/notes")
 end
 
 # Build static pages
-Stasis.build(template="src/templates/index.jl", output="build/index.html", notes=rand(feed, 6))
+Stasis.build(template="src/templates/index.jl", output="build/index.html", notes=Random.shuffle(feed)[1:6])
 Stasis.build(template="src/templates/404.jl", output="build/404.html")
 
 # Copy static files
