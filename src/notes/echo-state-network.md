@@ -12,5 +12,5 @@ s(t) = \phi(W_{in} u(t) + W_{res} s(t-1))
 
 Where $s(t)$ is the state at the current time step $t$. $W_{in}$ is the input layer weights. $u(t)$ is the input vector at the current time $t$. $W_{res}$ is the reservoir weight matrix. $s(t-1)$ is the state of the previous time step. $\phi$ is a sigmoidal activation function.
 
-Related: 
+##### Related 
 - [Neural Networks](/neural-networks)

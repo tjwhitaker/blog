@@ -4,4 +4,5 @@ slug = "mathematics"
 description = "Numbers and symbols."
 +++
 
-- [Singular Value Decomposition](/singular-value-decomposition)
+##### Related
+- [QR Decomposition](/qr-decomposition)

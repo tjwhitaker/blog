@@ -18,5 +18,5 @@ QRx = b \\\\
 x = R^{-1}Q^Tb \\\\ 
 ```
 
-##### Related:
+##### Related
 - [Mathematics](/mathematics)
