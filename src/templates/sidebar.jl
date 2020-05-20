@@ -2,6 +2,14 @@ aside() do
   h5("Meta", class="minion")
   div(class="meta") do
     img(src="/static/images/programming.svg")
+    ul(class="links") do
+      li() do
+        a("https://github.com/tjwhitaker", href="https://github.com/tjwhitaker")
+      end
+      li() do
+        a("mail@timwhitaker.ai", href="#")
+      end
+    end
   end
 
   # h5("Consulting", class="minion")

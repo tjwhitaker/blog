@@ -1,0 +1,12 @@
+.meta {
+  margin-bottom:1rem;
+}
+
+.meta .links {
+  margin-top: 1rem;
+}
+
+.meta .links li a {
+  font-family: Fira Mono, monospace;
+  font-size:0.75rem;
+}
