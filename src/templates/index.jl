@@ -20,7 +20,7 @@ html(lang="en") do
         
         main() do
           section(class="notes-index") do
-            p("Welcome! I'm a computer scientist studying artificial intelligence. Here you will find a collection of personal notes I've been compiling on all sorts of cool topics.")
+            p("Hello! I'm a computer scientist studying artificial intelligence. Here you will find a collection of personal notes I've been compiling on all sorts of cool topics.")
             p("Here are some useful entry points:")
             ul() do
               li() do

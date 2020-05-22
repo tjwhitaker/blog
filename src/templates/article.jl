@@ -21,7 +21,6 @@ html(lang="en") do
       div(class="wrapper") do
         div(class="grid") do
           article() do
-            h2(context["meta"]["title"], class="title")
             raw(context["content"])
           end
 

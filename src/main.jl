@@ -5,9 +5,8 @@ using Stasis
 feed = []
 
 # Parse markdown and build notes
-for file in Stasis.walk("src/notes")
-  meta = Stasis.parse_toml(file)
-  content = Stasis.parse_markdown(file)
+for file in Stasis.walk("src/org")
+  meta, content = Stasis.parse(file)
 
   push!(feed, meta)
 
@@ -20,7 +19,7 @@ for file in Stasis.walk("src/notes")
 end
 
 # Build static pages
-Stasis.build(template="src/templates/index.jl", output="build/index.html", notes=Random.shuffle(feed)[1:8])
+Stasis.build(template="src/templates/index.jl", output="build/index.html", notes=Random.shuffle(feed))
 Stasis.build(template="src/templates/404.jl", output="build/404.html")
 
 # Copy static files
