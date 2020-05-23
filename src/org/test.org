@@ -1,9 +1,0 @@
-#+TITLE: Test
-#+DESCRIPTION: Testing org as a filetype
-
-* Neural Networks
-
-Systems of connected neurons.
-
-* Related
-- [[file:test.org][Test]]

@@ -1,0 +1,48 @@
+#+TITLE: Policy Gradient Methods for Reinforcement Learning with Function Approximation
+#+DESCRIPTION: Timeless classic of reinforcment learning theory.
+
+* Policy Gradient Methods for Reinforcement Learning with Function Approximation
+
+Authors: Richard S. Sutton, David McAllester, Satinder Singh, Yishay Mansour
+Source: https://papers.nips.cc/paper/1713-policy-gradient-methods-for-reinforcement-learning-with-function-approximation.pdf
+
+Value function based approaches have long dominated the field of reinforcment learning. This paper introduces a method in which the policy is represented by a function approximator independent of any value function.
+
+The policy is updated according to a gradient of expected reward with respect to the policy parameters.
+
+$$
+\Delta \theta \approx \alpha \frac{\partial \rho}{\partial \theta}
+$$
+
+** Policy Gradient Theorem
+
+For any Markov Decision Process:
+
+$$
+\frac{\partial \rho}{\partial \theta} = \sum_s d^{\pi}(s) \sum_a \frac{\partial \pi(s, a)}{\partial \theta} Q^{\pi}(s, a)
+$$
+
+** Policy Gradient with Function Approximation
+
+Let $f_w$ be an approximation of $Q^{\pi}$.
+
+When such a process converges to a local optima, we get:
+
+$$
+\sum_s d^{\pi}(s) \sum_a  \frac{\partial \pi(s, a)}{\partial \theta}[Q^{\pi}(s, a) - f_w(s,a)] = 0
+$$
+
+Which tells us that the error in $f_w(s,a)$ is orthogonal to the gradient of the policy parameterization.
+
+
+** Policy Iteration with Function Approximation
+
+Given the previous theorems, we can prove that a form of policy iteration is convergent to a locally optimal policy.
+
+$$
+\theta_{k+1} = \theta_k + \alpha_k \sum_s d^{\pi_k}(s) \sum_a \frac{\partial \pi_k(s,a)}{\partial \theta} f_{w_k}(s,a)
+$$
+
+
+* Related
+- [[/reinforcement-learning][Reinforcement Learning]]
