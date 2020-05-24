@@ -1,14 +1,15 @@
 #+TITLE: Policy Gradient Methods for Reinforcement Learning with Function Approximation
 #+DESCRIPTION: Timeless classic of reinforcment learning theory.
+#+STARTUP: latexpreview
 
 * Policy Gradient Methods for Reinforcement Learning with Function Approximation
 
 Authors: Richard S. Sutton, David McAllester, Satinder Singh, Yishay Mansour
 Source: https://papers.nips.cc/paper/1713-policy-gradient-methods-for-reinforcement-learning-with-function-approximation.pdf
 
-Value function based approaches have long dominated the field of reinforcment learning. This paper introduces a method in which the policy is represented by a function approximator independent of any value function.
+This paper introduces an approach to reinforcement learning that uses function approximators to represent a stochastic policy. The authors go on to prove that updating the parameters of the function approximator with respect to the expected reward is convergent to a local optimum.
 
-The policy is updated according to a gradient of expected reward with respect to the policy parameters.
+The policy gradient approach updates the parameters $\theta$ with respect to the policy performance $\rho$ by a step size $\alpha$.
 
 $$
 \Delta \theta \approx \alpha \frac{\partial \rho}{\partial \theta}
@@ -16,7 +17,29 @@ $$
 
 ** Policy Gradient Theorem
 
-For any Markov Decision Process:
+With function approximation, there are two ways of formulating the agent's objective. The average-reward formulation, in which policies are ranked according to their long term expected reward per step, and the start-state formulation, in which the policies are ranked according to the expected long term reward of a given start state.
+
+The performance of a policy and the value of a state-action pair with an average-reward formulation is:
+
+$$
+\rho(\pi) = \lim_{n\to\infty} \frac{1}{n} E(r_1 + r_2 + ... + r_n)
+$$
+
+$$
+Q^\pi(s,a) = \sum_{t=1}^{\infty} E(r_t - \rho(\pi))
+$$
+
+The performance of a policy and the value of a state-action pair with a start-state formulation is:
+
+$$
+\rho(\pi) = E \sum_{t=1}^{\infty} \gamma^{t-1} r_t
+$$
+
+$$
+Q^\pi(s,a) = E \sum_{k=1}^{\infty} \gamma^{k-1} r_{t+k}
+$$
+
+For both of these formulations, the policy gradient for any Markov Decision Process can be defined as
 
 $$
 \frac{\partial \rho}{\partial \theta} = \sum_s d^{\pi}(s) \sum_a \frac{\partial \pi(s, a)}{\partial \theta} Q^{\pi}(s, a)
@@ -24,15 +47,24 @@ $$
 
 ** Policy Gradient with Function Approximation
 
-Let $f_w$ be an approximation of $Q^{\pi}$.
+The state-action value function $Q^{\pi}$ is not normally known and must be estimated. If a learned function approximator $f_w$ is sufficiently good, we can use it in place of $Q^{\pi}$ and still point roughly in the direction of the gradient.
 
-When such a process converges to a local optima, we get:
+When $f_w$ converges to a local optimum, we get:
 
 $$
 \sum_s d^{\pi}(s) \sum_a  \frac{\partial \pi(s, a)}{\partial \theta}[Q^{\pi}(s, a) - f_w(s,a)] = 0
 $$
 
-Which tells us that the error in $f_w(s,a)$ is orthogonal to the gradient of the policy parameterization.
+which tells us that the error in $f_w(s,a)$ is orthogonal to the gradient of the policy parameterization. Because the expression is 0 at the local optimum, we can subtract it from the policy gradient to get:
+
+
+\begin{aligned}
+\frac{\partial \rho}{\partial \theta} &= \sum_s d^{\pi}(s) \sum_a \frac{\partial \pi(s, a)}{\partial \theta} Q^{\pi}(s, a) - \sum_s d^{\pi}(s) \sum_a  \frac{\partial \pi(s, a)}{\partial \theta}[Q^{\pi}(s, a) - f_w(s,a)] \\\\
+&= \sum_s d^{\pi}(s)  \sum_a  \frac{\partial \pi(s, a)}{\partial \theta}[Q^{\pi}(s, a) - Q^{\pi}(s,a) + f_w(s,a)] \\\\
+&= \sum_s d^{\pi}(s)  \sum_a  \frac{\partial \pi(s, a)}{\partial \theta} f_w(s,a)
+\end{aligned}
+
+
 
 
 ** Policy Iteration with Function Approximation
@@ -42,7 +74,6 @@ Given the previous theorems, we can prove that a form of policy iteration is con
 $$
 \theta_{k+1} = \theta_k + \alpha_k \sum_s d^{\pi_k}(s) \sum_a \frac{\partial \pi_k(s,a)}{\partial \theta} f_{w_k}(s,a)
 $$
-
 
 * Related
 - [[/reinforcement-learning][Reinforcement Learning]]
