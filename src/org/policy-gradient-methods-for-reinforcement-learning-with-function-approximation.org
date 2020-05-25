@@ -57,13 +57,13 @@ $$
 
 which tells us that the error in $f_w(s,a)$ is orthogonal to the gradient of the policy parameterization. Because the expression is 0 at the local optimum, we can subtract it from the policy gradient to get:
 
-
+$$
 \begin{aligned}
 \frac{\partial \rho}{\partial \theta} &= \sum_s d^{\pi}(s) \sum_a \frac{\partial \pi(s, a)}{\partial \theta} Q^{\pi}(s, a) - \sum_s d^{\pi}(s) \sum_a  \frac{\partial \pi(s, a)}{\partial \theta}[Q^{\pi}(s, a) - f_w(s,a)] \\\\
 &= \sum_s d^{\pi}(s)  \sum_a  \frac{\partial \pi(s, a)}{\partial \theta}[Q^{\pi}(s, a) - Q^{\pi}(s,a) + f_w(s,a)] \\\\
 &= \sum_s d^{\pi}(s)  \sum_a  \frac{\partial \pi(s, a)}{\partial \theta} f_w(s,a)
 \end{aligned}
-
+$$
 
 
 

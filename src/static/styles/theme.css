@@ -50,6 +50,10 @@ ul li, ol li {
   margin:0;
 }
 
+br {
+  display:none;
+}
+
 .minion {
   color: #949494;
   text-transform: uppercase;
