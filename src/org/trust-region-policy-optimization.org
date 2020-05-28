@@ -1,0 +1,10 @@
+#+TITLE: Trust Region Policy Optimization
+#+DESCRIPTION:
+#+STARTUP: latexpreview
+
+* Trust Region Policy Optimization
+
+Authors: John Schulman, Sergey Levine, Philipp Moritz, Michael I. Jordan, Pieter Abbeel
+Source: https://arxiv.org/pdf/1502.05477.pdf
+
+When using policy gradients, small changes in the parameter space can sometimes have very large differences in performance. This makes it dangerous to use large step sizes as a single bad step can collapse policy performance. TRPO introduces a method for updating the policy while satisfying a constraint that measures how similar new and old policies are allowed to be.
