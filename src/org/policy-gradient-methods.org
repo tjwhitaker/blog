@@ -2,20 +2,20 @@
 #+DESCRIPTION: Classic reinforcment learning theory paper.
 #+STARTUP: latexpreview
 
-* Policy Gradient Methods for Reinforcement Learning with Function Approximation
+* Policy Gradient Methods
 
 Authors: Richard S. Sutton, David McAllester, Satinder Singh, Yishay Mansour
 Source: https://papers.nips.cc/paper/1713-policy-gradient-methods-for-reinforcement-learning-with-function-approximation.pdf
 
-This paper introduces an approach to reinforcement learning that uses function approximators to represent a stochastic policy. The authors go on to prove that updating the parameters of the function approximator with respect to the expected reward is convergent to a local optimum.
+This paper is a classic of modern reinforcement learning theory. Prior to this work, the common apporach to reinforcement learning was to use a neural network to estimate the value function and then build a policy by greedily selecting actions to maximize the estimated value. This paper introduces an approach that uses a neural network to represent the policy directly, independent of the value function. The math in this paper proves that a policy gradient method is guaranteed to converge to a local optimum.
+
+** Policy Gradient Theorem
 
 The policy gradient approach updates the parameters $\theta$ with respect to the policy performance $\rho$ by a step size $\alpha$.
 
 $$
 \Delta \theta \approx \alpha \frac{\partial \rho}{\partial \theta}
 $$
-
-** Policy Gradient Theorem
 
 With function approximation, there are two ways of formulating the agent's objective. The average-reward formulation, in which policies are ranked according to their long term expected reward per step, and the start-state formulation, in which the policies are ranked according to the expected long term reward of a given start state.
 
