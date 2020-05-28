@@ -1,5 +1,5 @@
-#+TITLE: Policy Gradient Methods for Reinforcement Learning with Function Approximation
-#+DESCRIPTION: Timeless classic of reinforcment learning theory.
+#+TITLE: Policy Gradient Methods
+#+DESCRIPTION: Classic reinforcment learning theory paper.
 #+STARTUP: latexpreview
 
 * Policy Gradient Methods for Reinforcement Learning with Function Approximation
