@@ -2,78 +2,35 @@
 #+DESCRIPTION: Classic reinforcment learning theory paper.
 #+STARTUP: latexpreview
 
-* Policy Gradient Methods
+* Policy Gradient Methods for Reinforcement Learning with Function Approximation (2000)
 
 Authors: Richard S. Sutton, David McAllester, Satinder Singh, Yishay Mansour
 Source: https://papers.nips.cc/paper/1713-policy-gradient-methods-for-reinforcement-learning-with-function-approximation.pdf
 
-This paper is a classic of modern reinforcement learning theory. Prior to this work, the common apporach to reinforcement learning was to use a neural network to estimate the value function and then build a policy by greedily selecting actions to maximize the estimated value. This paper introduces an approach that uses a neural network to represent the policy directly, independent of the value function. The math in this paper proves that a policy gradient method is guaranteed to converge to a local optimum.
-
-** Policy Gradient Theorem
-
-The policy gradient approach updates the parameters $\theta$ with respect to the policy performance $\rho$ by a step size $\alpha$.
-
-$$
-\Delta \theta \approx \alpha \frac{\partial \rho}{\partial \theta}
-$$
-
-With function approximation, there are two ways of formulating the agent's objective. The average-reward formulation, in which policies are ranked according to their long term expected reward per step, and the start-state formulation, in which the policies are ranked according to the expected long term reward of a given start state.
-
-The performance of a policy and the value of a state-action pair with an average-reward formulation is:
-
-$$
-\rho(\pi) = \lim_{n\to\infty} \frac{1}{n} E(r_1 + r_2 + ... + r_n)
-$$
-
-$$
-Q^\pi(s,a) = \sum_{t=1}^{\infty} E(r_t - \rho(\pi))
-$$
-
-The performance of a policy and the value of a state-action pair with a start-state formulation is:
-
-$$
-\rho(\pi) = E \sum_{t=1}^{\infty} \gamma^{t-1} r_t
-$$
-
-$$
-Q^\pi(s,a) = E \sum_{k=1}^{\infty} \gamma^{k-1} r_{t+k}
-$$
-
-For both of these formulations, the policy gradient for any Markov Decision Process can be defined as
-
-$$
-\frac{\partial \rho}{\partial \theta} = \sum_s d^{\pi}(s) \sum_a \frac{\partial \pi(s, a)}{\partial \theta} Q^{\pi}(s, a)
-$$
-
-** Policy Gradient with Function Approximation
-
-The state-action value function $Q^{\pi}$ is not normally known and must be estimated. If a learned function approximator $f_w$ is sufficiently good, we can use it in place of $Q^{\pi}$ and still point roughly in the direction of the gradient.
-
-When $f_w$ converges to a local optimum, we get:
-
-$$
-\sum_s d^{\pi}(s) \sum_a  \frac{\partial \pi(s, a)}{\partial \theta}[Q^{\pi}(s, a) - f_w(s,a)] = 0
-$$
-
-which tells us that the error in $f_w(s,a)$ is orthogonal to the gradient of the policy parameterization. Because the expression is 0 at the local optimum, we can subtract it from the policy gradient to get:
-
-$$
-\begin{aligned}
-\frac{\partial \rho}{\partial \theta} &= \sum_s d^{\pi}(s) \sum_a \frac{\partial \pi(s, a)}{\partial \theta} Q^{\pi}(s, a) - \sum_s d^{\pi}(s) \sum_a  \frac{\partial \pi(s, a)}{\partial \theta}[Q^{\pi}(s, a) - f_w(s,a)] \\\\
-&= \sum_s d^{\pi}(s)  \sum_a  \frac{\partial \pi(s, a)}{\partial \theta}[Q^{\pi}(s, a) - Q^{\pi}(s,a) + f_w(s,a)] \\\\
-&= \sum_s d^{\pi}(s)  \sum_a  \frac{\partial \pi(s, a)}{\partial \theta} f_w(s,a)
-\end{aligned}
-$$
+This paper is a classic in the field of reinforcment learning.
 
 
+** Problems Addressed
 
-** Policy Iteration with Function Approximation
+Prior to this work, the standard approach to reinforcement learning was to approximate a value function and use that to greedily build a policy by selecting the actions that maximize the value function. The value function approach has worked well for many applications but has several limitations.
 
-Given the previous theorems, we can prove that a form of policy iteration is convergent to a locally optimal policy.
+1. The value function based approach lends itself to deterministic policies. Sometimes the most optimal policy is a stochastic one.
+
+2. A small change in the estimated value of an action can cause it to be or not be selected. These discontinuous changes make it hard to assure convergence.
+
+
+** Key Ideas
+
+A function approximator (neural network) is used to represent a stochastic policy directly and the parameters $\theta$ of the policy $\pi$ are updated as follows:
 
 $$
 \theta_{k+1} = \theta_k + \alpha_k \sum_s d^{\pi_k}(s) \sum_a \frac{\partial \pi_k(s,a)}{\partial \theta} f_{w_k}(s,a)
 $$
+
+where $d^{\pi}(s)$ is the stationary distribution of states, $f_{w_k}(s,a)$ is an approximation of the advantage function, and $\alpha$ is a positive-definite step size.
+
+
+Let $\{\alpha_k\}_{k=0}^{\infty}$ be any step size sequence such that $lim_{k \to \infty} \alpha_k = 0$ and $\sum_k \alpha_k = \infty$. Then, for any markov decision process with bounded rewards such that $\{\rho(\pi_k)\}_{k=0}^{\infty} < \infty$ is guaranteed to converge to a locally optimal policy such that $lim_{k \to \infty} \frac{\partial \rho(\pi_k)}{\partial \theta} = 0$.
 
 * Related
 - [[../reinforcement-learning][Reinforcement Learning]]
