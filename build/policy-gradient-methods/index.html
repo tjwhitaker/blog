@@ -10,14 +10,18 @@
 <li><p>A small change in the estimated value of an action can cause it to be or not be selected. These discontinuous changes make it hard to assure convergence.</p></li>
 </ol>
 <h2 id="key-ideas">Key Ideas</h2>
-<p>A function approximator (neural network) is used to represent a stochastic policy directly and the parameters <span class="math inline"><em>θ</em></span> of the policy <span class="math inline"><em>π</em></span> are updated as follows:</p>
-<p><br /><span class="math display">$$
+<p>A function approximator (neural network) is used to represent a stochastic policy directly and the parameters <span class="math inline">\theta</span> of the policy <span class="math inline">\pi</span> are updated as follows:</p>
+<p><span class="math display">\displaystyle 
 \theta_{k+1} = \theta_k + \alpha_k \sum_s d^{\pi_k}(s) \sum_a \frac{\partial \pi_k(s,a)}{\partial \theta} f_{w_k}(s,a)
-$$</span><br /></p>
-<p>where <span class="math inline"><em>d</em><sup><em>π</em></sup>(<em>s</em>)</span> is the stationary distribution of states, <span class="math inline"><em>f</em><sub><em>w</em><sub><em>k</em></sub></sub>(<em>s</em>, <em>a</em>)</span> is an approximation of the advantage function, and <span class="math inline"><em>α</em></span> is a positive-definite step size.</p>
-<p>Let <span class="math inline">{<em>α</em><sub><em>k</em></sub>}<sub><em>k</em> = 0</sub><sup>∞</sup></span> be any step size sequence such that <span class="math inline"><em>l</em><em>i</em><em>m</em><sub><em>k</em> → ∞</sub><em>α</em><sub><em>k</em></sub> = 0</span> and <span class="math inline">∑<sub><em>k</em></sub><em>α</em><sub><em>k</em></sub> = ∞</span>. Then, for any markov decision process with bounded rewards such that <span class="math inline">{<em>ρ</em>(<em>π</em><sub><em>k</em></sub>)}<sub><em>k</em> = 0</sub><sup>∞</sup> &lt; ∞</span> is guaranteed to converge to a locally optimal policy such that <span class="math inline">$lim_{k \to \infty} \frac{\partial \rho(\pi_k)}{\partial \theta} = 0$</span>.</p>
+</span></p>
+<p>where <span class="math inline">d^{\pi}(s)</span> is the stationary distribution of states, <span class="math inline">f_{w_k}(s,a)</span> is an approximation of the advantage function, and <span class="math inline">\alpha</span> is a positive-definite step size.</p>
+<p>Let <span class="math inline">\{\alpha_k\}_{k=0}^{\infty}</span> be any step size sequence such that <span class="math inline">lim_{k \to \infty} \alpha_k = 0</span> and <span class="math inline">\sum_k \alpha_k = \infty</span>. Then, for any markov decision process with bounded rewards such that <span class="math inline">\{\rho(\pi_k)\}_{k=0}^{\infty} &lt; \infty</span> is guaranteed to converge to a locally optimal policy such that <span class="math inline">lim_{k \to \infty} \frac{\partial \rho(\pi_k)}{\partial \theta} = 0</span>.</p>
 <h1 id="related">Related</h1>
 <ul>
 <li><a href="../reinforcement-learning">Reinforcement Learning</a></li>
 </ul>
-</article><aside><h5 class="minion">Meta</h5><div class="meta"><img src="/static/images/programming.svg"><ul class="links"><li><a href="https://github.com/tjwhitaker">https://github.com/tjwhitaker</a></li><li><a href="#">mail@timwhitaker.ai</a></li></ul></div><h5 class="minion">Subscribe</h5><div class="newsletter"><h3>Want to stay updated?</h3><input type="email" placeholder="Email"><button>Sign Me Up</button></div></aside></div></div></main><footer><div class="wrapper"></div></footer><script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body, {'delimiters': [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script></body></html>
+</article><aside><h5 class="minion">Meta</h5><div class="meta"><img src="/static/images/programming.svg"><ul class="links"><li><a href="https://github.com/tjwhitaker">https://github.com/tjwhitaker</a></li><li><a href="#">mail@timwhitaker.ai</a></li></ul></div><h5 class="minion">Subscribe</h5><div class="newsletter"><h3>Want to stay updated?</h3><input type="email" placeholder="Email"><button>Sign Me Up</button></div></aside></div></div></main><footer><div class="wrapper"></div></footer><script>  var math = document.getElementsByClassName('math');
+  for (var i = 0; i < math.length; i++) {
+    katex.render(math[i].textContent, math[i], {displayMode: math[i].classList.contains('display')});
+  }
+</script></body></html>

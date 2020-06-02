@@ -5,10 +5,14 @@
 <p>When using policy gradients, small changes in the parameter space can sometimes have very large differences in performance. This makes it dangerous to use large step sizes as a single bad step can collapse policy performance. TRPO introduces a method for updating the policy while satisfying a constraint that measures how similar new and old policies are allowed to be.</p>
 <h2 id="problems-addressed">Problems Addressed</h2>
 <h2 id="key-ideas">Key Ideas</h2>
-<p><br /><span class="math display">$$
+<p><span class="math display">\displaystyle 
 \begin{aligned}
 \underset{\theta}{\text{maximize}} \ \ &amp;\mathbb{E} \left[ \frac{\pi_{\theta}(a | s)}{\pi_{\theta_{old}}(a | s)} A_{\theta_{old}}(s,a) \right] \\\\
 subject\ to \ \ &amp;\mathbb{E}\ [ D_{KL}(\pi_{\theta_{old}}(\cdot | s)\ ||\  \pi_{\theta}(\cdot | s))] \ \leq \ \delta \\\\
 \end{aligned}
-$$</span><br /></p>
-</article><aside><h5 class="minion">Meta</h5><div class="meta"><img src="/static/images/programming.svg"><ul class="links"><li><a href="https://github.com/tjwhitaker">https://github.com/tjwhitaker</a></li><li><a href="#">mail@timwhitaker.ai</a></li></ul></div><h5 class="minion">Subscribe</h5><div class="newsletter"><h3>Want to stay updated?</h3><input type="email" placeholder="Email"><button>Sign Me Up</button></div></aside></div></div></main><footer><div class="wrapper"></div></footer><script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body, {'delimiters': [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script></body></html>
+</span></p>
+</article><aside><h5 class="minion">Meta</h5><div class="meta"><img src="/static/images/programming.svg"><ul class="links"><li><a href="https://github.com/tjwhitaker">https://github.com/tjwhitaker</a></li><li><a href="#">mail@timwhitaker.ai</a></li></ul></div><h5 class="minion">Subscribe</h5><div class="newsletter"><h3>Want to stay updated?</h3><input type="email" placeholder="Email"><button>Sign Me Up</button></div></aside></div></div></main><footer><div class="wrapper"></div></footer><script>  var math = document.getElementsByClassName('math');
+  for (var i = 0; i < math.length; i++) {
+    katex.render(math[i].textContent, math[i], {displayMode: math[i].classList.contains('display')});
+  }
+</script></body></html>
