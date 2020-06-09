@@ -20,15 +20,9 @@ html(lang="en") do
         
         main() do
           section(class="notes-index") do
-            p("Hello! My name is Tim and I'm a computer scientist studying artificial intelligence.")
+            p("Welcome to my website!")
             p("Here are some useful entry points:")
             ul() do
-              li() do
-                a("Mathematics", href="/mathematics")
-              end
-              li() do
-                a("Neural Networks", href="/neural-networks")
-              end
               li() do
                 a("Reinforcement Learning", href="/reinforcement-learning")
               end
@@ -36,7 +30,7 @@ html(lang="en") do
           end
 
           section(class="random-notes") do
-            h5("Random Notes", class="minion")
+            h5("Random Articles", class="minion")
             div(class="notes") do
               for note in context["notes"]
                 div(class="note") do

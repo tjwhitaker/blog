@@ -1,5 +1,5 @@
 #+TITLE: Policy Gradient Methods
-#+DESCRIPTION: Classic reinforcment learning theory paper.
+#+DESCRIPTION: A timeless classic of reinforcement learning theory.
 #+STARTUP: latexpreview
 
 * Policy Gradient Methods for Reinforcement Learning with Function Approximation (2000)
@@ -8,7 +8,6 @@ Authors: Richard S. Sutton, David McAllester, Satinder Singh, Yishay Mansour
 Source: https://papers.nips.cc/paper/1713-policy-gradient-methods-for-reinforcement-learning-with-function-approximation.pdf
 
 This paper is a classic in the field of reinforcment learning.
-
 
 ** Problems Addressed
 
@@ -28,7 +27,6 @@ $$
 $$
 
 where $d^{\pi}(s)$ is the stationary distribution of states, $f_{w_k}(s,a)$ is an approximation of the advantage function, and $\alpha$ is a positive-definite step size.
-
 
 Let $\{\alpha_k\}_{k=0}^{\infty}$ be any step size sequence such that $lim_{k \to \infty} \alpha_k = 0$ and $\sum_k \alpha_k = \infty$. Then, for any markov decision process with bounded rewards such that $\{\rho(\pi_k)\}_{k=0}^{\infty} < \infty$ is guaranteed to converge to a locally optimal policy such that $lim_{k \to \infty} \frac{\partial \rho(\pi_k)}{\partial \theta} = 0$.
 

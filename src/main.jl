@@ -4,11 +4,21 @@ using Stasis
 # Collection of post metadata for index and blog
 feed = []
 
-# Parse markdown and build notes
-for file in Stasis.walk("src/org")
+for file in Stasis.walk("src/notes")
   meta, content = Stasis.parse(file)
 
   push!(feed, meta)
+
+  Stasis.build(
+    template="src/templates/article.jl",
+    output="build/$(meta["slug"])/index.html",
+    meta=meta,
+    content=content
+  )
+end
+
+for file in Stasis.walk("src/indices")
+  meta, content = Stasis.parse(file)
 
   Stasis.build(
     template="src/templates/article.jl",
