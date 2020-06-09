@@ -1,8 +1,8 @@
-#+TITLE: Trust Region Policy Optimization (2015)
+#+TITLE: Trust Region Policy Optimization
 #+DESCRIPTION: The monotonic on-policy algorithm.
 #+STARTUP: latexpreview
 
-* Trust Region Policy Optimization
+* Trust Region Policy Optimization (2015)
 
 Authors: John Schulman, Sergey Levine, Philipp Moritz, Michael I. Jordan, Pieter Abbeel
 Source: https://arxiv.org/pdf/1502.05477.pdf
