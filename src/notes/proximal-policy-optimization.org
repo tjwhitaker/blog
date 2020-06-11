@@ -1,0 +1,31 @@
+#+TITLE: Proximal Policy Optimization (2017)
+#+DESCRIPTION: A powerful, simple, and reliable on-policy algorithm.
+
+* Proximal Policy Optimization (2017)
+
+Authors: John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford, Oleg Klimov
+Source: https://arxiv.org/pdf/1707.06347.pdf
+
+** Problems Addressed
+
+How can we take the biggest possible improvement step on a policy using the data we currently have without stepping so far that we accidentally cause performance collapse?
+
+** Key Ideas
+
+Proximal Policy Optimization uses a clipped surrogate objective function which forms a pessimistic lower bound of the performance of the policy.
+
+$$
+\mathcal{L}(\theta) = \mathbb{E}_t [min(r_t(\theta)\hat{A}_t,\ clip(r_t(\theta),\ 1 - \epsilon,\ 1 + \epsilon)\hat{A}_t)]
+$$
+
+$$
+r_t(\theta) = \frac{\pi_{\theta}(a_t | s_t)}{\pi_{\theta_{old}}(a_t | s_t)}
+$$
+
+To optimize policies, alternate between sampling data from the policy and performing several epochs of optimization on sampled data.
+
+
+* Related
+
+- [[../trust-region-policy-optimization][Trust Region Policy Optimization]]
+- [[../policy-gradient-methods][Policy Gradient Methods]]

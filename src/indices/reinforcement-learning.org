@@ -1,5 +1,6 @@
 #+TITLE: Reinforcement Learning
-#+DESCRIPTION: .
+#+DESCRIPTION: State. Action. Reward.
 
-[[../policy-gradient-methods][Policy Gradient Methods]]
-[[../trust-region-policy-optimization][Trust Region Policy Optimization]]
+- [[../policy-gradient-methods][Policy Gradient Methods]]
+- [[../trust-region-policy-optimization][Trust Region Policy Optimization]]
+- [[../proximal-policy-optimization][Proximal Policy Optimization]]

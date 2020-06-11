@@ -1,4 +1,4 @@
-#+TITLE: Policy Gradient Methods
+#+TITLE: Policy Gradient Methods (2000)
 #+DESCRIPTION: A timeless classic of reinforcement learning theory.
 #+STARTUP: latexpreview
 

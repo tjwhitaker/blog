@@ -1,4 +1,4 @@
-#+TITLE: Trust Region Policy Optimization
+#+TITLE: Trust Region Policy Optimization (2015)
 #+DESCRIPTION: The monotonic on-policy algorithm.
 #+STARTUP: latexpreview
 
