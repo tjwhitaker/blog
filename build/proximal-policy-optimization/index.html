@@ -5,7 +5,7 @@
 <h2 id="problems-addressed">Problems Addressed</h2>
 <p>How can we take the biggest possible improvement step on a policy using the data we currently have without stepping so far that we accidentally cause performance collapse?</p>
 <h2 id="key-ideas">Key Ideas</h2>
-<p>Proximal Policy Optimization uses a clipped surrogate objective function which forms a pessimistic lower bound of the performance of the policy.</p>
+<p>Proximal Policy Optimization uses a clipped surrogate objective function which forms a lower bound of the performance of the policy.</p>
 <p><span class="math display">\displaystyle 
 \mathcal{L}(\theta) = \mathbb{E}_t [min(r_t(\theta)\hat{A}_t,\ clip(r_t(\theta),\ 1 - \epsilon,\ 1 + \epsilon)\hat{A}_t)]
 </span></p>

@@ -12,7 +12,7 @@ How can we take the biggest possible improvement step on a policy using the data
 
 ** Key Ideas
 
-Proximal Policy Optimization uses a clipped surrogate objective function which forms a pessimistic lower bound of the performance of the policy.
+Proximal Policy Optimization uses a clipped surrogate objective function which forms a lower bound of the performance of the policy.
 
 $$
 \mathcal{L}(\theta) = \mathbb{E}_t [min(r_t(\theta)\hat{A}_t,\ clip(r_t(\theta),\ 1 - \epsilon,\ 1 + \epsilon)\hat{A}_t)]

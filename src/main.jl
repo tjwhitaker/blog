@@ -4,7 +4,7 @@ using Stasis
 # Collection of post metadata for index and blog
 feed = []
 
-for file in Stasis.walk("src/notes")
+for file in Stasis.walk("src/articles")
   meta, content = Stasis.parse(file)
 
   push!(feed, meta)
