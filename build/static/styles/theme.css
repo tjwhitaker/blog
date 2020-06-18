@@ -43,11 +43,11 @@ input {
 }
 
 ul, ol {
-  margin-top:0.5rem;
+  margin-top:0rem;
 }
 
 ul li, ol li {
-  margin-top:2rem;
+  margin-top:0.5rem;
 }
 
 br {

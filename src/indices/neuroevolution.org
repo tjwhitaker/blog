@@ -1,4 +1,9 @@
 #+TITLE: Neuroevolution
 #+DESCRIPTION: Evolving neural networks.
 
-- [[../neuroevolution-of-augmenting-technologies][Neuroevolution of Augmenting Topologies]]
+* Neuroevolution
+
+The field in which we use evolutionary programming techniques to train neural networks.
+
+* Articles
+- [[../neuroevolution-of-augmenting-topologies][Neuroevolution of Augmenting Topologies]]

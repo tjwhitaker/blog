@@ -23,9 +23,12 @@ html(lang="en") do
             p("Hello everyone. My name is Tim and I hope to one day build artificial general intelligence. This website is my research <a href=\"https://en.wikipedia.org/wiki/Zettelkasten\">zettelkasten</a> and I hope you will enjoy exploring some of the articles here.")
             p("Here are some useful entry points:")
             ul() do
-              li() do
-                a("Reinforcement Learning", href="/reinforcement-learning")
-              end
+                li() do
+                    a("Neuroevolution", href="/neuroevolution")
+                end
+                li() do
+                    a("Reinforcement Learning", href="/reinforcement-learning")
+                end
             end
           end
 

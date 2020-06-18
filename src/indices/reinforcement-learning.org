@@ -1,6 +1,11 @@
 #+TITLE: Reinforcement Learning
 #+DESCRIPTION: State. Action. Reward.
 
+* Reinforcement Learning
+
+A field of machine learning where we embed an agent in an environment and task it with learning what actions to take.
+
+* Articles
 - [[../policy-gradient-methods][Policy Gradient Methods]]
 - [[../trust-region-policy-optimization][Trust Region Policy Optimization]]
 - [[../proximal-policy-optimization][Proximal Policy Optimization]]
