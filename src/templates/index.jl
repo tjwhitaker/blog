@@ -36,7 +36,7 @@ html(lang="en") do
             h5("Random Articles", class="minion")
             div(class="notes") do
               for note in context["notes"]
-                div(class="note") do
+                div(class="note", style="width: $(["30%", "40%"][rand(1:end)])") do
                   a(href="/$(note["slug"])") do
                     h3(note["title"])
                     p(note["description"])
