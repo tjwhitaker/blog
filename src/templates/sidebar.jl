@@ -5,7 +5,7 @@ aside() do
     p("I'm always interested in fun or meaningful machine learning projects. Email me at info@timwhitaker.ai and we can talk more about working together.")
   end
 
-  h5("Subscribe", class="minion")
+  h5("Newsletter", class="minion")
   div(class="newsletter") do
     h3("Want to stay updated?")
     input(type="email", placeholder="Email")
