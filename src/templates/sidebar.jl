@@ -2,7 +2,7 @@ aside() do
   h5("Consulting", class="minion")
   div(class="meta") do
     img(src="/static/images/programming.svg")
-    p("I'm always interested in fun or meaningful machine learning projects. Email me at info@timwhitaker.ai and we can talk more about working together.")
+    p("I'm always interested in fun or meaningful machine learning projects. Email me and we can talk more about working together.")
   end
 
   h5("Newsletter", class="minion")
