@@ -1,8 +1,8 @@
-#+TITLE: Policy Gradient Methods (2000)
+#+TITLE: Policy Gradient Methods
 #+DESCRIPTION: A timeless classic of reinforcement learning theory.
 #+STARTUP: latexpreview
 
-* Policy Gradient Methods for Reinforcement Learning with Function Approximation (2000)
+* Policy Gradient Methods
 
 Authors: Richard S. Sutton, David McAllester, Satinder Singh, Yishay Mansour
 Source: https://papers.nips.cc/paper/1713-policy-gradient-methods-for-reinforcement-learning-with-function-approximation.pdf

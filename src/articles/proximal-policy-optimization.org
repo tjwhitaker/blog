@@ -1,7 +1,7 @@
-#+TITLE: Proximal Policy Optimization (2017)
+#+TITLE: Proximal Policy Optimization
 #+DESCRIPTION: A powerful, simple, and reliable on-policy algorithm.
 
-* Proximal Policy Optimization (2017)
+* Proximal Policy Optimization
 
 Authors: John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford, Oleg Klimov
 Source: https://arxiv.org/pdf/1707.06347.pdf

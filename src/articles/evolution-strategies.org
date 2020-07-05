@@ -1,0 +1,23 @@
+#+TITLE: Evolution Strategies
+#+DESCRIPTION: The baseline neuroevolution algorithm.
+
+* Evolution Strategies
+
+Evolution Strategies is a paper released in 2017 by Open AI that is an exploration of applying neuroevolution at scale.
+
+The ideas presented here have been used in evolutionary algorithms for decades.
+
+** The Algorithm
+
+Create a parameter vector.
+
+Generate a population of size n by tweaking that parameter vector with gaussian noise.
+
+Evaluate each member of the population by running the policy network in an environment.
+
+Update the parameter vector by computing the weighted sum of the rewards of the n members of the population.
+
+* Related
+
+- [[../neuroevolution][Neuroevolution]]
+- [[../neuroevolution-of-augmenting-topologies][NEAT]]

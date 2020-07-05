@@ -1,0 +1,8 @@
+#+TITLE: World Models
+#+DESCRIPTION: Generative neural networks for modeling environments.
+
+* World Models
+
+Use a neural network to build a representation of the environment.
+
+* Related

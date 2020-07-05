@@ -20,7 +20,7 @@ html(lang="en") do
         
         main() do
           section(class="notes-index") do
-            p("Hello everyone. My name is Tim and I'm a computer scientist building intelligent systems. This website is my research <a href=\"https://en.wikipedia.org/wiki/Zettelkasten\">zettelkasten</a> and I hope you will enjoy exploring some of the articles here.")
+            p("Hello everyone. My name is Tim and I'm a computer scientist building artificial intelligence. This website is my research <a href=\"https://en.wikipedia.org/wiki/Zettelkasten\">notebook</a> and I hope you will enjoy exploring some of the articles here.")
             p("Here are some useful entry points:")
             ul() do
                 li() do
@@ -36,7 +36,7 @@ html(lang="en") do
             h5("Random Articles", class="minion")
             div(class="notes") do
               for note in context["notes"]
-                div(class="note", style="width: $(["30%", "40%"][rand(1:end)])") do
+                div(class="note", style="width: $(["20%", "40%", "60%"][rand(1:end)])") do
                   a(href="/$(note["slug"])") do
                     h3(note["title"])
                     p(note["description"])
